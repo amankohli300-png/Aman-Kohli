@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<meta name="theme-color" content="#080b12">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact — Unboxed Thinking</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --black:#080b12;
+    --dark:#0c121c;
+    --white:#fff;
+
+    --lavender:#e7e0f8;
+    --lavender-light:#f3f0fb;
+
+    --purple:#7c3aed;
+    --purple-dark:#6428c7;
+    --purple-light:#d8c9ff;
+
+    --lime:#c7ff29;
+
+    --text:#10131a;
+    --muted:#687386;
+
+    --line:rgba(15,18,28,.12);
+
+    --max:1460px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Manrope",sans-serif;
+    color:var(--text);
+    background:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(calc(100% - 90px),var(--max));
+    margin:auto;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:22px 0;
+    transition:.35s ease;
+}
+
+.nav.scrolled{
+    padding:14px 0;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:800;
+    letter-spacing:-.06em;
+}
+
+.logo span{
+    color:var(--purple);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a{
+    position:relative;
+}
+
+.nav-links a:not(.nav-cta)::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:var(--purple);
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-cta{
+    padding:12px 21px;
+    border-radius:100px;
+    background:var(--black);
+    color:#fff;
+    transition:.3s;
+}
+
+.nav-cta:hover{
+    background:var(--purple);
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:82vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 84% 24%,
+            rgba(124,58,237,.17),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff 0%,
+            #faf9ff 52%,
+            var(--lavender) 100%
+        );
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+
+    width:720px;
+    height:720px;
+
+    right:-330px;
+    top:-20px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(124,58,237,.17);
+
+    box-shadow:
+        0 0 0 80px rgba(124,58,237,.025),
+        0 0 0 160px rgba(124,58,237,.018),
+        0 0 0 240px rgba(124,58,237,.012);
+}
+
+.hero::after{
+    content:"SERVICES";
+
+    position:absolute;
+
+    right:-35px;
+    bottom:-65px;
+
+    font-size:clamp(130px,20vw,330px);
+
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:-.1em;
+
+    color:rgba(124,58,237,.035);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    padding:150px 0 90px;
+}
+
+.eyebrow{
+    font-family:"DM Mono",monospace;
+
+    font-size:12px;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:var(--purple);
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+    max-width:1100px;
+
+    font-size:clamp(58px,8vw,118px);
+
+    line-height:.87;
+
+    letter-spacing:-.078em;
+}
+
+.hero h1 span{
+    color:var(--purple);
+}
+
+.hero-text{
+    max-width:720px;
+
+    margin-top:38px;
+
+    color:#5e697b;
+
+    font-size:20px;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro{
+    padding:125px 0;
+
+    background:#fff;
+}
+
+.intro-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1.1fr;
+
+    gap:80px;
+}
+
+.kicker{
+    font-family:"DM Mono",monospace;
+
+    font-size:12px;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:var(--purple);
+
+    margin-bottom:22px;
+}
+
+.intro h2{
+    max-width:700px;
+
+    font-size:clamp(45px,5.8vw,80px);
+
+    line-height:.94;
+
+    letter-spacing:-.07em;
+}
+
+.intro h2 span{
+    color:var(--purple);
+}
+
+.intro-content{
+    align-self:end;
+
+    color:#687386;
+
+    font-size:19px;
+
+    line-height:1.75;
+}
+
+.intro-content p + p{
+    margin-top:22px;
+}
+
+
+/* =====================================================
+   DARK PROCESS
+===================================================== */
+
+.process{
+    padding:135px 0 145px;
+
+    background:var(--dark);
+
+    color:#fff;
+
+    overflow:hidden;
+}
+
+.process-head{
+    display:grid;
+
+    grid-template-columns:1fr 1.1fr;
+
+    gap:70px;
+
+    margin-bottom:85px;
+}
+
+.process-head h2{
+    font-size:clamp(45px,5.8vw,80px);
+
+    line-height:.94;
+
+    letter-spacing:-.065em;
+}
+
+.process-head p{
+    align-self:end;
+
+    max-width:670px;
+
+    color:#9da7b7;
+
+    font-size:20px;
+
+    line-height:1.7;
+}
+
+
+/* PROCESS CIRCLES */
+
+.process-track{
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+    align-items:center;
+}
+
+.process-track::before{
+    content:"";
+
+    position:absolute;
+
+    left:9%;
+    right:9%;
+
+    top:50%;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(199,255,41,.8) 10%,
+            rgba(199,255,41,.8) 90%,
+            transparent
+        );
+
+    z-index:0;
+}
+
+.process-track::after{
+    content:"";
+
+    position:absolute;
+
+    top:calc(50% - 5px);
+
+    left:10%;
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--lime);
+
+    box-shadow:
+        0 0 15px var(--lime),
+        0 0 30px rgba(199,255,41,.6);
+
+    animation:moveDot 7s linear infinite;
+
+    z-index:1;
+}
+
+@keyframes moveDot{
+
+    0%{
+        left:9%;
+        opacity:0;
+    }
+
+    8%{
+        opacity:1;
+    }
+
+    92%{
+        opacity:1;
+    }
+
+    100%{
+        left:91%;
+        opacity:0;
+    }
+
+}
+
+.process-circle{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:35px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #18212d,
+            #080d15 70%
+        );
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
+
+    transition:.45s ease;
+}
+
+.process-circle:hover{
+
+    transform:
+        translateY(-12px)
+        scale(1.04);
+
+    border-color:var(--lime);
+
+    box-shadow:
+        0 0 0 7px rgba(199,255,41,.05),
+        0 0 45px rgba(199,255,41,.14),
+        0 28px 60px rgba(0,0,0,.5);
+}
+
+.process-circle-title{
+
+    font-family:"DM Mono",monospace;
+
+    font-size:18px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.03em;
+}
+
+.process-circle-number{
+
+    margin-top:13px;
+
+    color:var(--lime);
+
+    font-family:"DM Mono",monospace;
+
+    font-size:14px;
+
+    letter-spacing:.15em;
+}
+
+
+/* =====================================================
+   MAIN SERVICES
+===================================================== */
+
+.services{
+    padding:125px 0;
+
+    background:#fff;
+}
+
+.section-head{
+    display:grid;
+
+    grid-template-columns:1fr 1.1fr;
+
+    gap:70px;
+
+    margin-bottom:70px;
+}
+
+.section-head h2{
+    font-size:clamp(45px,5.8vw,80px);
+
+    line-height:.95;
+
+    letter-spacing:-.065em;
+}
+
+.section-intro{
+    align-self:end;
+
+    max-width:660px;
+
+    color:#687386;
+
+    font-size:20px;
+
+    line-height:1.7;
+}
+
+
+/* SERVICE GRID */
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    border:1px solid var(--line);
+
+    border-radius:28px;
+
+    overflow:hidden;
+}
+
+.service-card{
+
+    min-height:350px;
+
+    padding:42px;
+
+    position:relative;
+
+    background:#fff;
+
+    border-right:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
+
+    transition:
+        background .4s ease,
+        color .4s ease,
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.service-card:nth-child(2n){
+    border-right:0;
+}
+
+.service-card:nth-last-child(-n+2){
+    border-bottom:0;
+}
+
+.service-card:hover{
+
+    background:var(--purple);
+
+    color:#fff;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 25px 55px rgba(124,58,237,.2);
+}
+
+.service-number{
+
+    color:var(--purple);
+
+    font-family:"DM Mono",monospace;
+
+    font-size:13px;
+
+    letter-spacing:.08em;
+}
+
+.service-card:hover .service-number{
+    color:#dfd2ff;
+}
+
+.service-card h3{
+
+    margin-top:70px;
+
+    font-size:32px;
+
+    line-height:1;
+
+    letter-spacing:-.05em;
+}
+
+.service-card p{
+
+    max-width:620px;
+
+    margin-top:18px;
+
+    color:#687386;
+
+    font-size:17px;
+
+    line-height:1.65;
+}
+
+.service-card:hover p{
+    color:#fff;
+}
+
+.service-arrow{
+
+    position:absolute;
+
+    right:35px;
+
+    bottom:30px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--lavender);
+
+    color:var(--purple);
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.service-card:hover .service-arrow{
+
+    background:rgba(255,255,255,.14);
+
+    color:#fff;
+
+    transform:rotate(-45deg);
+}
+
+
+/* =====================================================
+   MARKETING DARK SECTION
+===================================================== */
+
+.marketing{
+    padding:125px 0;
+
+    background:var(--dark);
+
+    color:#fff;
+}
+
+.marketing-head{
+
+    display:grid;
+
+    grid-template-columns:1fr 1.1fr;
+
+    gap:70px;
+
+    margin-bottom:60px;
+}
+
+.marketing-head h2{
+
+    font-size:clamp(45px,5.8vw,80px);
+
+    line-height:.94;
+
+    letter-spacing:-.065em;
+}
+
+.marketing-head h2 span{
+    color:var(--lime);
+}
+
+.marketing-head p{
+
+    align-self:end;
+
+    color:#9da7b7;
+
+    font-size:19px;
+
+    line-height:1.7;
+
+    max-width:650px;
+}
+
+.marketing-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+}
+
+.marketing-card{
+
+    min-height:280px;
+
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.025);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:.4s;
+}
+
+.marketing-card:hover{
+
+    background:var(--purple);
+
+    border-color:var(--purple);
+
+    transform:translateY(-8px);
+}
+
+.marketing-number{
+
+    color:var(--lime);
+
+    font-family:"DM Mono",monospace;
+
+    font-size:11px;
+
+    letter-spacing:.1em;
+}
+
+.marketing-card h3{
+
+    font-size:28px;
+
+    line-height:1;
+
+    letter-spacing:-.045em;
+
+    margin-bottom:15px;
+}
+
+.marketing-card p{
+
+    color:#9da7b7;
+
+    font-size:15px;
+
+    line-height:1.6;
+}
+
+.marketing-card:hover p{
+    color:#fff;
+}
+
+
+/* =====================================================
+   WEB DEVELOPMENT
+===================================================== */
+
+.web-section{
+
+    padding:125px 0;
+
+    background:var(--lavender);
+}
+
+.web-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+.web-card{
+
+    min-height:300px;
+
+    padding:38px;
+
+    border-radius:26px;
+
+    background:rgba(255,255,255,.58);
+
+    border:1px solid rgba(124,58,237,.15);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:.4s;
+}
+
+.web-card:hover{
+
+    background:var(--purple);
+
+    color:#fff;
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 25px 55px rgba(82,43,153,.18);
+}
+
+.web-tag{
+
+    color:var(--purple);
+
+    font-family:"DM Mono",monospace;
+
+    font-size:11px;
+
+    letter-spacing:.12em;
+
+}
+
+.web-card:hover .web-tag{
+    color:#dfd2ff;
+}
+
+.web-card h3{
+
+    font-size:35px;
+
+    letter-spacing:-.05em;
+
+    margin:20px 0 14px;
+}
+
+.web-card p{
+
+    color:#687386;
+
+    font-size:16px;
+
+    line-height:1.65;
+}
+
+.web-card:hover p{
+    color:#fff;
+}
+
+.web-link{
+
+    margin-top:25px;
+
+    font-weight:800;
+
+    color:var(--purple);
+}
+
+.web-card:hover .web-link{
+    color:#fff;
+}
+
+
+/* =====================================================
+   WHY US
+===================================================== */
+
+.why{
+
+    padding:125px 0;
+
+    background:#fff;
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:14px;
+}
+
+.why-card{
+
+    min-height:260px;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    background:#f5f4f7;
+
+    border:1px solid #e1e0e5;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:.4s;
+}
+
+.why-card:hover{
+
+    background:var(--purple);
+
+    color:#fff;
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 25px 55px rgba(124,58,237,.18);
+}
+
+.why-number{
+
+    color:var(--purple);
+
+    font-family:"DM Mono",monospace;
+
+    font-size:12px;
+}
+
+.why-card:hover .why-number{
+    color:#dfd2ff;
+}
+
+.why-card h3{
+
+    font-size:25px;
+
+    letter-spacing:-.045em;
+
+    margin-bottom:12px;
+}
+
+.why-card p{
+
+    color:#687386;
+
+    font-size:15px;
+
+    line-height:1.6;
+}
+
+.why-card:hover p{
+    color:#fff;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:140px 0 160px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7e0f8,
+            #f0ecfa 55%,
+            #ddd2f4
+        );
+}
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:620px;
+    height:620px;
+
+    right:-280px;
+    top:-160px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(124,58,237,.2);
+
+    box-shadow:
+        0 0 0 70px rgba(124,58,237,.035),
+        0 0 0 140px rgba(124,58,237,.025);
+}
+
+.cta-content{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.cta-label{
+
+    font-family:"DM Mono",monospace;
+
+    color:var(--purple);
+
+    font-size:12px;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    margin-bottom:24px;
+}
+
+.cta h2{
+
+    max-width:1100px;
+
+    font-size:clamp(58px,8vw,120px);
+
+    line-height:.87;
+
+    letter-spacing:-.08em;
+}
+
+.cta h2 span{
+    color:var(--purple);
+}
+
+.cta-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    gap:40px;
+
+    margin-top:50px;
+}
+
+.cta-bottom p{
+
+    max-width:620px;
+
+    color:#5f6979;
+
+    font-size:18px;
+
+    line-height:1.7;
+}
+
+.cta-button{
+
+    flex-shrink:0;
+
+    padding:17px 25px;
+
+    border-radius:100px;
+
+    background:var(--black);
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    transition:.35s;
+}
+
+.cta-button:hover{
+
+    background:var(--purple);
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 35px rgba(124,58,237,.2);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    padding:30px 0;
+
+    background:var(--dark);
+
+    color:#fff;
+}
+
+.footer-inner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    color:#929cab;
+
+    font-size:12px;
+}
+
+.footer-brand{
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:800;
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px){
+
+    .container{
+        width:min(calc(100% - 38px),var(--max));
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:75vh;
+    }
+
+    .hero-content{
+        padding:130px 0 70px;
+    }
+
+    .hero h1{
+        font-size:clamp(54px,14vw,82px);
+    }
+
+    .hero-text{
+        font-size:17px;
+        margin-top:28px;
+    }
+
+    .intro,
+    .services,
+    .marketing,
+    .web-section,
+    .why{
+        padding:90px 0;
+    }
+
+    .intro-grid,
+    .section-head,
+    .process-head,
+    .marketing-head{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .section-intro,
+    .marketing-head p,
+    .process-head p,
+    .intro-content{
+        font-size:17px;
+    }
+
+    .process{
+        padding:90px 0;
+    }
+
+    .process-track{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:25px;
+    }
+
+    .process-track::before,
+    .process-track::after{
+        display:none;
+    }
+
+    .process-circle{
+        padding:20px;
+    }
+
+    .process-circle-title{
+        font-size:14px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-card{
+
+        min-height:290px;
+
+        border-right:0!important;
+
+        border-bottom:1px solid var(--line)!important;
+    }
+
+    .service-card:last-child{
+        border-bottom:0!important;
+    }
+
+    .service-card h3{
+        font-size:28px;
+        margin-top:55px;
+    }
+
+    .marketing-grid{
+        grid-template-columns:1fr;
+    }
+
+    .marketing-card{
+        min-height:220px;
+    }
+
+    .web-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cta{
+        padding:100px 0 120px;
+    }
+
+    .cta h2{
+        font-size:clamp(56px,14vw,85px);
+    }
+
+    .cta-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+
+@media(max-width:520px){
+
+    .process-track{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-card{
+        min-height:280px;
+        padding:30px;
+    }
+
+    .web-card{
+        min-height:270px;
+        padding:30px;
+    }
+
+}
+
+</style>
+<link rel="stylesheet" href="unboxed-theme.css?v=20261017-bright-white-v1">
+  <link rel="stylesheet" href="unboxed-theme.css?v=20261017-bright-white-v1">
+<link rel="stylesheet" href="site-nav.css?v=20261017-bright-white-v1">
+
+<style id="headline-color-policy">
+/* Headline palette: red on light surfaces, white on dark surfaces. */
+:where(h1,h2,h3,h4,h5,h6),
+:where(h1,h2,h3,h4,h5,h6) :where(span,strong,em,b,i) {
+  color: #ed343b !important;
+}
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6),
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6)
+       :where(span,strong,em,b,i) {
+  color: #ffffff !important;
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="nav" id="nav">
+
+<div class="container nav-inner">
+
+<a href="index.html" class="logo">
+UNBOXED <span>THINKING.</span>
+</a>
+
+
+<nav class="nav-links">
+
+<a href="index.html">Home</a>
+
+
+
+<a href="services.html">Services</a>
+
+<a href="web-development.html">Web Development</a>
+
+
+
+<a href="contact.html" class="nav-cta">
+Let's Talk
+</a>
+
+</nav>
+
+
+<!-- MOBILE HAMBURGER -->
+
+<button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Open menu"
+    aria-expanded="false"
+>
+
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+<div class="mobile-menu-inner">
+
+<div class="mobile-menu-label">
+Unboxed Thinking / MENU
+</div>
+
+
+<nav class="mobile-links">
+
+<a href="index.html">
+Home
+</a>
+
+
+
+<a href="services.html">
+Services
+</a>
+
+<a href="web-development.html">
+Web Development
+</a>
+
+
+
+<a href="contact.html" class="mobile-cta">
+Let's Talk →
+</a>
+
+</nav>
+
+</div>
+
+</div>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="container hero-content reveal">
+
+<div class="eyebrow">
+SERVICES
+</div>
+
+<h1>
+Digital services built to
+<span>move business forward.</span>
+</h1>
+
+<p class="hero-text">
+From websites and SEO to paid advertising, social media and
+lead generation, we build digital systems designed to attract,
+engage and convert the right audience.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro">
+
+<div class="container intro-grid">
+
+<div class="reveal">
+
+<div class="kicker">
+OUR APPROACH
+</div>
+
+<h2>
+One digital direction.
+<span>Multiple capabilities.</span>
+</h2>
+
+</div>
+
+
+<div class="intro-content reveal">
+
+<p>
+Your website, marketing campaigns, search visibility and
+social presence should work together — not operate as
+separate activities.
+</p>
+
+<p>
+We combine strategy, website development and digital
+marketing to create a connected digital presence focused
+on visibility, enquiries and business growth.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="process">
+
+<div class="container">
+
+<div class="process-head reveal">
+
+<div>
+
+<div class="eyebrow" style="color:var(--lime)">
+OUR PROCESS
+</div>
+
+<h2>
+Every service starts with a clear direction.
+</h2>
+
+</div>
+
+<p>
+We understand the business first, create the right digital
+strategy, build what is required and continuously optimise
+performance based on what the data tells us.
+</p>
+
+</div>
+
+
+<div class="process-track">
+
+
+<div class="process-circle reveal">
+
+<div class="process-circle-title">
+Understand
+</div>
+
+<div class="process-circle-number">
+01
+</div>
+
+</div>
+
+
+<div class="process-circle reveal">
+
+<div class="process-circle-title">
+Strategise
+</div>
+
+<div class="process-circle-number">
+02
+</div>
+
+</div>
+
+
+<div class="process-circle reveal">
+
+<div class="process-circle-title">
+Create
+</div>
+
+<div class="process-circle-number">
+03
+</div>
+
+</div>
+
+
+<div class="process-circle reveal">
+
+<div class="process-circle-title">
+Optimise
+</div>
+
+<div class="process-circle-number">
+04
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CORE SERVICES
+===================================================== -->
+
+<section class="services">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div>
+
+<div class="kicker">
+CORE SERVICES
+</div>
+
+<h2>
+Everything your digital presence needs.
+</h2>
+
+</div>
+
+<p class="section-intro">
+Focused services designed to help businesses build a stronger
+online presence, reach relevant audiences and generate better
+business opportunities.
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<!-- 01 -->
+
+<article class="service-card reveal">
+
+<div class="service-number">
+BUILD
+</div>
+
+<h3>
+Website Development
+</h3>
+
+<p>
+Business websites, landing pages and WordPress websites
+designed around usability, performance, mobile experience
+and conversion.
+</p>
+
+<div class="service-arrow">
+↗
+</div>
+
+</article>
+
+
+<!-- 02 -->
+
+<article class="service-card reveal">
+
+<div class="service-number">
+VISIBILITY
+</div>
+
+<h3>
+SEO
+</h3>
+
+<p>
+Keyword research, on-page optimisation, technical improvements,
+content direction and search visibility designed to attract
+relevant organic traffic.
+</p>
+
+<div class="service-arrow">
+↗
+</div>
+
+</article>
+
+
+<!-- 03 -->
+
+<article class="service-card reveal">
+
+<div class="service-number">
+PERFORMANCE
+</div>
+
+<h3>
+Google Ads
+</h3>
+
+<p>
+Search campaigns and paid advertising built around relevant
+search intent, lead generation, enquiries and measurable
+campaign performance.
+</p>
+
+<div class="service-arrow">
+↗
+</div>
+
+</article>
+
+
+<!-- 04 -->
+
+<article class="service-card reveal">
+
+<div class="service-number">
+SOCIAL
+</div>
+
+<h3>
+Meta Ads
+</h3>
+
+<p>
+Facebook and Instagram advertising focused on audience
+targeting, awareness, enquiries, product promotion and
+conversion-focused campaigns.
+</p>
+
+<div class="service-arrow">
+↗
+</div>
+
+</article>
+
+
+<!-- 05 -->
+
+<article class="service-card reveal">
+
+<div class="service-number">
+CONTENT
+</div>
+
+<h3>
+Social Media Management
+</h3>
+
+<p>
+Content planning, social media handling, creative direction
+and consistent communication across relevant social platforms.
+</p>
+
+<div class="service-arrow">
+↗
+</div>
+
+</article>
+
+
+<!-- 06 -->
+
+<article class="service-card reveal">
+
+<div class="service-number">
+GROWTH
+</div>
+
+<h3>
+B2B Lead Generation
+</h3>
+
+<p>
+Digital outreach and lead generation systems designed to
+connect businesses with relevant prospects and create
+better sales opportunities.
+</p>
+
+<div class="service-arrow">
+↗
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DIGITAL MARKETING
+===================================================== -->
+
+<section class="marketing">
+
+<div class="container">
+
+<div class="marketing-head reveal">
+
+<div>
+
+<div class="eyebrow" style="color:var(--lime)">
+DIGITAL MARKETING
+</div>
+
+<h2>
+Marketing that focuses on
+<span>real outcomes.</span>
+</h2>
+
+</div>
+
+<p>
+We don't treat every business the same. Campaign direction,
+audience, messaging and channel selection are shaped around
+the business objective and the people you want to reach.
+</p>
+
+</div>
+
+
+<div class="marketing-grid">
+
+
+<div class="marketing-card reveal">
+
+<div class="marketing-number">
+01
+</div>
+
+<div>
+
+<h3>
+Search Marketing
+</h3>
+
+<p>
+Reach people actively searching for your products,
+services or solutions through search-focused campaigns.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="marketing-card reveal">
+
+<div class="marketing-number">
+02
+</div>
+
+<div>
+
+<h3>
+Paid Social
+</h3>
+
+<p>
+Build awareness, generate enquiries and promote offers
+through targeted social media advertising.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="marketing-card reveal">
+
+<div class="marketing-number">
+03
+</div>
+
+<div>
+
+<h3>
+Lead Generation
+</h3>
+
+<p>
+Create campaign journeys that move prospects from
+initial interest towards a genuine enquiry.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="marketing-card reveal">
+
+<div class="marketing-number">
+04
+</div>
+
+<div>
+
+<h3>
+Social Media
+</h3>
+
+<p>
+Maintain a consistent digital presence through content,
+creative direction and platform management.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="marketing-card reveal">
+
+<div class="marketing-number">
+05
+</div>
+
+<div>
+
+<h3>
+Digital Branding
+</h3>
+
+<p>
+Create a consistent online identity across websites,
+campaigns, social platforms and customer touchpoints.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="marketing-card reveal">
+
+<div class="marketing-number">
+06
+</div>
+
+<div>
+
+<h3>
+Analytics & Optimisation
+</h3>
+
+<p>
+Monitor performance, identify opportunities and continuously
+improve campaign and website effectiveness.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WEB DEVELOPMENT
+===================================================== -->
+
+<section class="web-section">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div>
+
+<div class="kicker">
+WEB DEVELOPMENT
+</div>
+
+<h2>
+Websites built for more than just looking good.
+</h2>
+
+</div>
+
+<p class="section-intro">
+A website should communicate clearly, work smoothly on every
+device and make it easier for visitors to take the next step.
+</p>
+
+</div>
+
+
+<div class="web-grid">
+
+
+<div class="web-card reveal">
+
+<div>
+
+<div class="web-tag">
+BUSINESS WEBSITES
+</div>
+
+<h3>
+Business Website Development
+</h3>
+
+<p>
+Professional websites designed to communicate your services,
+build credibility and turn visitors into enquiries.
+</p>
+
+</div>
+
+<a href="web-development.html" class="web-link">
+Explore Web Development →
+</a>
+
+</div>
+
+
+<div class="web-card reveal">
+
+<div>
+
+<div class="web-tag">
+LANDING PAGES
+</div>
+
+<h3>
+Campaign Landing Pages
+</h3>
+
+<p>
+Focused landing pages built around specific campaigns,
+offers, lead generation and conversion journeys.
+</p>
+
+</div>
+
+<a href="web-development.html" class="web-link">
+Explore Web Development →
+</a>
+
+</div>
+
+
+<div class="web-card reveal">
+
+<div>
+
+<div class="web-tag">
+WORDPRESS
+</div>
+
+<h3>
+WordPress Development
+</h3>
+
+<p>
+Flexible WordPress websites with responsive layouts,
+custom sections and content management capabilities.
+</p>
+
+</div>
+
+<a href="web-development.html" class="web-link">
+Explore Web Development →
+</a>
+
+</div>
+
+
+<div class="web-card reveal">
+
+<div>
+
+<div class="web-tag">
+OPTIMISATION
+</div>
+
+<h3>
+Website Optimisation
+</h3>
+
+<p>
+Improve structure, usability, mobile experience and
+performance to create a smoother digital journey.
+</p>
+
+</div>
+
+<a href="web-development.html" class="web-link">
+Explore Web Development →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WHY US
+===================================================== -->
+
+<section class="why">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div>
+
+<div class="kicker">
+WHY WORK WITH US
+</div>
+
+<h2>
+Built around what actually matters.
+</h2>
+
+</div>
+
+<p class="section-intro">
+A clear process, focused execution and digital activity
+connected to genuine business objectives.
+</p>
+
+</div>
+
+
+<div class="why-grid">
+
+
+<div class="why-card reveal">
+
+<div class="why-number">
+01
+</div>
+
+<div>
+
+<h3>
+Clear Strategy
+</h3>
+
+<p>
+Every project starts by understanding the objective,
+audience and digital opportunity.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="why-card reveal">
+
+<div class="why-number">
+02
+</div>
+
+<div>
+
+<h3>
+Practical Execution
+</h3>
+
+<p>
+We focus on useful digital work that can actually be
+implemented, measured and improved.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="why-card reveal">
+
+<div class="why-number">
+03
+</div>
+
+<div>
+
+<h3>
+Performance Focused
+</h3>
+
+<p>
+Campaigns and digital experiences are built around
+visibility, engagement, enquiries and growth.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="why-card reveal">
+
+<div class="why-number">
+04
+</div>
+
+<div>
+
+<h3>
+Long-Term Thinking
+</h3>
+
+<p>
+We build digital systems that can evolve as your
+business, audience and goals change.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-content reveal">
+
+<div class="cta-label">
+LET'S BUILD
+</div>
+
+<h2>
+Need a digital service that
+<span>actually moves the needle?</span>
+</h2>
+
+<div class="cta-bottom">
+
+<p>
+Tell us what you are trying to achieve. Whether you need
+a website, more visibility, better campaigns or more leads,
+we can start with a simple conversation.
+</p>
+
+<button type="button" class="cta-button" id="openContactModal" aria-haspopup="dialog" aria-controls="contactOptionsModal">
+Let's Talk →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div class="footer-brand">
+Unboxed Thinking
+</div>
+
+<div>
+Digital Marketing · Web Development · SEO · Paid Ads
+</div>
+
+<div>
+© 2026
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   NAV SCROLL
+===================================================== */
+
+const nav = document.getElementById("nav");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 35){
+
+        nav.classList.add("scrolled");
+
+    }else{
+
+        nav.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const observer = new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach((entry,index)=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.transitionDelay =
+                Math.min(index,5) * 65 + "ms";
+
+            entry.target.classList.add("active");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.10
+}
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(el){
+
+    observer.observe(el);
+
+});
+
+
+/* =====================================================
+   TOUCH FEEL
+===================================================== */
+
+document
+.querySelectorAll(
+    ".process-circle,.service-card,.marketing-card,.web-card,.why-card"
+)
+.forEach(function(card){
+
+    card.addEventListener(
+        "touchstart",
+        function(){
+
+            this.style.transform="translateY(-5px)";
+
+        },
+        {passive:true}
+    );
+
+    card.addEventListener(
+        "touchend",
+        function(){
+
+            this.style.transform="";
+
+        },
+        {passive:true}
+    );
+
+});
+
+</script>
+
+<script src="site-nav.js?v=20261017-hamburger-reset-v7"></script>
+<script src="unboxed-motion.js"></script>
+
+<!-- current-page-nav-fix -->
+<style id="current-page-nav-fix">
+.nav-links a.is-current-page:not(.nav-cta)::after{width:100%!important;background:#ed343b!important}
+.nav-links a.nav-cta.is-current-page{position:relative}
+.nav-links a.nav-cta.is-current-page::after{content:"";position:absolute;left:0;bottom:-7px;width:100%;height:2px;background:#ed343b}
+.mobile-links a.is-current-page:not(.mobile-cta){color:#ed343b!important;border-bottom-color:#ed343b!important;text-decoration:underline;text-decoration-color:#ed343b;text-decoration-thickness:2px;text-underline-offset:7px}
+.mobile-links a.mobile-cta.is-current-page{box-shadow:inset 0 -2px 0 #fff}
+
+
+/* =====================================================
+   ACCESSIBILITY / CONTRAST PASS — Unboxed Thinking
+   Keep text readable on both light and dark surfaces.
+===================================================== */
+:where(p, li, small, .hero-description, .hero-text, .section-intro,
+       .intro-content, .web-card p, .web-content p, .service-card p,
+       .process-item p, .cta-bottom p, .footer-inner, .feature-row p,
+       .contact-copy, .form-note, .card-description) {
+    color: #465164;
+}
+:where(.marketing, .process, .feature, .work-footer, footer.dark,
+       .dark-section, .mobile-menu) :where(p, li, small, .section-intro,
+       .intro-content, .footer-inner, .feature-row p, .process-head p,
+       .marketing-head p, .marketing-card p, .contact-copy, .form-note) {
+    color: #d0d6e0;
+}
+:where(.marketing, .process, .feature, .work-footer, footer.dark,
+       .dark-section) :where(a:not(.nav-cta):not(.cta-button), .footer-inner a) {
+    color: #f8fafc;
+}
+:where(.nav-links a, .mobile-links a, .logo, button, .cta-button,
+       .nav-cta, .web-button, .service-link, .service-arrow) {
+    text-decoration-thickness: max(1px, .06em);
+}
+:where(a, button, input, textarea, select):focus-visible {
+    outline: 3px solid #7c3aed;
+    outline-offset: 4px;
+}
+::selection {
+    color: #ffffff;
+    background: #6428c7;
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* LET'S TALK CONTACT OPTIONS — this page only */
+#contactOptionsModal[hidden]{display:none!important}
+#contactOptionsModal{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(8,11,18,.68);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+#contactOptionsModal .contact-modal-panel{position:relative;width:min(100%,540px);max-height:min(88vh,760px);overflow:auto;background:#fff;color:#10131a;border:1px solid rgba(124,58,237,.16);border-radius:26px;padding:clamp(24px,5vw,42px);box-shadow:0 30px 100px rgba(0,0,0,.28)}
+#contactOptionsModal .contact-modal-kicker{font:500 11px/1.4 "DM Mono",monospace;letter-spacing:.17em;text-transform:uppercase;color:#7c3aed;margin-bottom:12px}
+#contactOptionsModal h2{font-size:clamp(27px,5vw,38px);line-height:1.05;letter-spacing:-.055em;margin:0 42px 10px 0;color:#10131a}
+#contactOptionsModal .contact-modal-copy{font-size:14px;line-height:1.7;color:#596477;margin-bottom:24px}
+#contactOptionsModal .contact-modal-close{position:absolute;right:18px;top:18px;width:40px;height:40px;border:0;border-radius:50%;background:#f1eef8;color:#17151f;font-size:25px;line-height:1;cursor:pointer}
+#contactOptionsModal .contact-option-list{display:grid;gap:10px}
+#contactOptionsModal .contact-option{display:flex;align-items:center;gap:14px;min-height:66px;padding:14px 16px;border:1px solid #e7e4ee;border-radius:15px;background:#fff;color:#15131c;text-decoration:none;transition:transform .2s,border-color .2s,background .2s}
+#contactOptionsModal .contact-option:hover{transform:translateY(-2px);border-color:#7c3aed;background:#faf8ff}
+#contactOptionsModal .contact-option-icon{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:12px;background:#f0eaff;color:#6428c7;font-size:18px;font-weight:800}
+#contactOptionsModal .contact-option strong{display:block;font-size:14px;font-weight:800}
+#contactOptionsModal .contact-option small{display:block;margin-top:3px;color:#667085;font-size:12px;overflow-wrap:anywhere}
+#contactOptionsModal .contact-development{display:flex;justify-content:center;align-items:center;gap:10px;width:100%;margin-top:16px;min-height:54px;padding:13px 18px;border:0;border-radius:100px;background:#7c3aed;color:#fff;font:800 13px/1.4 "Manrope",sans-serif;text-align:center;cursor:pointer;transition:background .2s,transform .2s}
+#contactOptionsModal .contact-development:hover{background:#6428c7;transform:translateY(-2px)}
+#contactOptionsModal .contact-modal-note{margin-top:13px;font-size:11px;line-height:1.6;color:#70798a;text-align:center}
+body.contact-modal-open{overflow:hidden}
+@media(max-width:520px){#contactOptionsModal{padding:14px}#contactOptionsModal .contact-modal-panel{border-radius:21px;padding:25px 19px}#contactOptionsModal .contact-option{padding:12px}#contactOptionsModal .contact-option-icon{flex-basis:36px;height:36px}}
+
+</style>
+<script id="current-page-nav-fix-script">
+(function(){
+  function applyCurrentPage(){
+    var current=(window.location.pathname.split('/').pop()||'index.html').toLowerCase();
+    var aliases={'website-projects.html':'web-development.html','landing-page-projects.html':'web-development.html'};
+    var active=aliases[current]||current;
+    document.querySelectorAll('.nav-links a[href],.mobile-links a[href]').forEach(function(link){
+      try{
+        var target=(new URL(link.getAttribute('href'),window.location.href).pathname.split('/').pop()||'index.html').toLowerCase();
+        if(target===active){
+          link.classList.add('is-current-page');
+          link.setAttribute('aria-current','page');
+        }else{
+          link.classList.remove('is-current-page');
+          link.removeAttribute('aria-current');
+        }
+      }catch(e){}
+    });
+  }
+  applyCurrentPage();
+  if(document.body){
+    new MutationObserver(function(){applyCurrentPage();}).observe(document.body,{childList:true,subtree:true});
+  }
+})();
+</script>
+
+
+<!-- Let's Talk contact popup: scoped to contact.html only -->
+<div id="contactOptionsModal" hidden>
+  <section class="contact-modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" aria-describedby="contactModalDescription" tabindex="-1">
+    <button type="button" class="contact-modal-close" id="closeContactModal" aria-label="Close contact options">×</button>
+    <div class="contact-modal-kicker">LET'S TALK</div>
+    <h2 id="contactModalTitle">How would you like to connect?</h2>
+    <p class="contact-modal-copy" id="contactModalDescription">Choose a direct contact option, or send us your website development enquiry on WhatsApp.</p>
+    <div class="contact-option-list">
+      <a class="contact-option" href="tel:+919267967187">
+        <span class="contact-option-icon" aria-hidden="true">☎</span>
+        <span><strong>Call us</strong><small>+91 92679 67187</small></span>
+      </a>
+      <a class="contact-option" href="https://wa.me/919112573020" target="_blank" rel="noopener noreferrer">
+        <span class="contact-option-icon" aria-hidden="true">↗</span>
+        <span><strong>WhatsApp</strong><small>+91 91125 73020</small></span>
+      </a>
+      <a class="contact-option" href="mailto:itsshailesh0414@gmail.com">
+        <span class="contact-option-icon" aria-hidden="true">@</span>
+        <span><strong>Email us</strong><small>itsshailesh0414@gmail.com</small></span>
+      </a>
+    </div>
+    <button type="button" class="contact-development" id="developmentEnquiryButton">Send a Website / Development Enquiry on WhatsApp <span aria-hidden="true">↗</span></button>
+    <p class="contact-modal-note">WhatsApp opens with a prepared enquiry message. Review it and press Send in WhatsApp.</p>
+  </section>
+</div>
+<script id="lets-talk-contact-modal-script">
+(function(){
+  var modal=document.getElementById('contactOptionsModal');
+  var openButton=document.getElementById('openContactModal');
+  var closeButton=document.getElementById('closeContactModal');
+  var panel=modal&&modal.querySelector('.contact-modal-panel');
+  var developmentButton=document.getElementById('developmentEnquiryButton');
+  if(!modal||!openButton||!closeButton||!panel||!developmentButton)return;
+  var previousFocus=null;
+  function openModal(){
+    previousFocus=document.activeElement;
+    modal.hidden=false;
+    document.body.classList.add('contact-modal-open');
+    closeButton.focus();
+  }
+  function closeModal(){
+    modal.hidden=true;
+    document.body.classList.remove('contact-modal-open');
+    if(previousFocus&&typeof previousFocus.focus==='function')previousFocus.focus();
+  }
+  openButton.addEventListener('click',openModal);
+  closeButton.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(event){if(event.target===modal)closeModal();});
+  document.addEventListener('keydown',function(event){
+    if(modal.hidden)return;
+    if(event.key==='Escape'){closeModal();return;}
+    if(event.key==='Tab'){
+      var items=Array.prototype.slice.call(panel.querySelectorAll('a[href],button:not([disabled])'));
+      if(!items.length)return;
+      var first=items[0],last=items[items.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    }
+  });
+  developmentButton.addEventListener('click',function(){
+    var message="Hi AK × ST Advertising, I’d like to enquire about website development. Please contact me to discuss my project requirements, scope and pricing.";
+    window.open('https://wa.me/919112573020?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+  });
+})();
+</script>
+
+</body>
+</html>
