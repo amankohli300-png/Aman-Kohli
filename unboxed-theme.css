@@ -1,0 +1,199 @@
+/* Unboxed Thinking — shared black / white / red design system */
+:root{
+ --black:#080808;--dark:#101010;--white:#ffffff;
+ --lavender:#151515;--lavender-light:#1b1b1b;
+ --purple:#ed343b;--purple-dark:#b51f28;--purple-light:#ff8589;
+ --lime:#ed343b;--text:#ffffff;--muted:#ffffff;
+ --border:rgba(255,255,255,.14);--line:rgba(255,255,255,.14);
+ --max:1460px;
+}
+html{background:#080808;color-scheme:dark}
+body{background:#080808!important;color:#ffffff!important;overflow-x:hidden}
+body,button,input,textarea,select{font-family:"Manrope",Arial,Helvetica,sans-serif}
+a{color:inherit}
+::selection{background:#ed343b;color:#fff}
+.nav,.nav.scrolled,header.nav{background:rgba(8,8,8,.88)!important;color:#ffffff!important;border-bottom:1px solid rgba(255,255,255,.12)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.logo,.brand,.footer-brand{color:#fff!important}
+.logo span,.brand span,.nav-links a:hover,.mobile-links a:hover,.mobile-links a:active{color:#ed343b!important}
+.nav-links,.nav-links a,.mobile-menu,.mobile-links a{color:#ffffff}
+.nav-cta,.btn.red,.cta-button,.web-button{background:#ed343b!important;border-color:#ed343b!important;color:#fff!important}
+.nav-cta:hover,.cta-button:hover,.web-button:hover{background:#c9222a!important}
+.menu-toggle,.menu-btn{background:#151515!important;border-color:#ffffff35!important;color:#fff!important}
+.menu-toggle span,.menu-btn span{background:#fff!important}
+.mobile-menu{background:radial-gradient(circle at 80% 15%,rgba(237,52,59,.18),transparent 34%),rgba(7,7,7,.98)!important}
+.hero,.page-hero,.hero-section{position:relative;isolation:isolate;background:#080808!important;color:#ffffff!important;overflow:hidden}
+.hero::before,.hero::after,.page-hero::before,.page-hero::after{pointer-events:none}
+.hero::before{border-color:rgba(237,52,59,.22)!important;box-shadow:0 0 0 85px rgba(237,52,59,.025),0 0 0 170px rgba(237,52,59,.014)!important}
+.hero::after{color:rgba(237,52,59,.045)!important}
+.hero h1,.hero h2,.page-hero h1,.display,.section h2,.section-head h2,.process-head h2,.marketing-head h2,.intro h2,.cta-content h2{color:#ffffff}
+.hero h1 span,.hero h2 span,.page-hero h1 em,.display em,.section h2 span,.section-head h2 span,.intro h2 span,.cta-content h2 span{color:#ed343b!important}
+.hero-description,.hero-text,.intro-content,.section-intro,.muted,.service-card p,.marketing-card p,.web-card p,.process-item p,.feature-row p{color:#a5a5a5!important}
+.eyebrow,.kicker,.label,.service-number,.marketing-number,.web-type,.cta-label,.mobile-menu-label{color:#ed343b!important}
+.section,.section-light,.services,.process,.marketing,.web-development,.web-section,.intro,.feature,.final-cta,.why,.work-section,.page-section,.page-content,.contact-section{background:#080808!important;color:#ffffff!important}
+.section-light,.process,.web-section,.final-cta{background:#0d0d0d!important}
+.service-card,.marketing-card,.web-card,.project,.work-card,.industry-card,.why-card,.contact-card,.web-content,.service-grid,.services-grid{background:#111!important;color:#ffffff!important;border-color:rgba(255,255,255,.13)!important}
+.service-card:hover,.marketing-card:hover,.web-card:hover{background:#ed343b!important;color:#fff!important;border-color:#ed343b!important}
+.service-card:hover p,.marketing-card:hover p,.web-card:hover p{color:#fff!important}
+.web-visual{background:radial-gradient(circle at 50% 45%,rgba(237,52,59,.5),rgba(237,52,59,.1) 30%,transparent 63%),#111!important}
+.web-code{background:#050505!important}
+.code-line{background:#343434!important}
+.process-list,.process-item,.feature-list,.feature-row{border-color:rgba(255,255,255,.15)!important}
+.process-item:hover{background:rgba(237,52,59,.06)!important}
+.process-circle{background:radial-gradient(circle at 50% 35%,#1c1c1c,#080808 70%)!important;border-color:rgba(255,255,255,.2)!important}
+.process-circle:hover{border-color:#ed343b!important;box-shadow:0 0 0 7px rgba(237,52,59,.05),0 0 45px rgba(237,52,59,.14),0 28px 60px rgba(0,0,0,.5)!important}
+.process-circle-number{color:#ed343b!important}
+.process-track::before{background:linear-gradient(90deg,transparent,rgba(237,52,59,.8) 10%,rgba(237,52,59,.8) 90%,transparent)!important}
+.process-track::after{background:#ed343b!important;box-shadow:0 0 15px #ed343b,0 0 30px rgba(237,52,59,.6)!important}
+.final-cta::before{border-color:rgba(237,52,59,.2)!important;box-shadow:0 0 0 70px rgba(237,52,59,.025),0 0 0 140px rgba(237,52,59,.018)!important}
+.final-cta::after{color:rgba(237,52,59,.04)!important}
+footer,.footer,.work-footer{background:#050505!important;color:#ffffff!important;border-color:rgba(255,255,255,.12)!important}
+.footer-bottom,.footer-inner,.footer-links{color:#ffffff!important}
+.btn,.web-button,.cta-button{border-radius:3px!important}
+.btn:hover,.nav-links a:hover,.footer-links a:hover{color:#ed343b!important}
+.reveal{transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.ut-warp-layer{position:absolute!important;inset:0!important;z-index:0!important;overflow:hidden!important;pointer-events:none!important;opacity:.84}
+.ut-warp-layer canvas{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;max-width:none!important}
+.hero-content,.hero-inner,.hero-text,.hero .container,.hero .work-container,.page-hero .container,.hero-content.reveal{position:relative;z-index:2}
+.ut-intro{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;overflow:hidden;background:#050505;color:#ffffff;opacity:1;visibility:visible;transition:opacity .85s ease,visibility .85s ease}
+.ut-intro.exit{opacity:0;visibility:hidden;pointer-events:none}
+.ut-intro:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 48%,rgba(140,15,25,.17),transparent 52%)}
+.ut-intro .ut-intro-grid{position:absolute;inset:0;opacity:.23;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:65px 65px;mask-image:linear-gradient(to bottom,transparent,#000 20%,#000 80%,transparent)}
+.ut-intro .ut-intro-copy{position:relative;z-index:2;width:100%;padding:24px;text-align:center}
+.ut-intro .ut-kicker{font:10px "DM Mono",monospace;letter-spacing:4px;color:#ffffff;margin-bottom:30px}
+.ut-intro .ut-stage{height:clamp(62px,13vw,160px);position:relative}
+.ut-intro .ut-word{position:absolute;left:0;right:0;top:50%;font-size:clamp(48px,12vw,150px);font-weight:900;letter-spacing:-.075em;line-height:.9;opacity:0;filter:blur(12px);transform:translateY(calc(-50% + 30px));transition:opacity .6s,filter .6s,transform .6s}
+.ut-intro .ut-word.show{opacity:1;filter:blur(0);transform:translateY(-50%)}
+.ut-intro .ut-word.hide{opacity:0;filter:blur(12px);transform:translateY(calc(-50% - 30px))}
+.ut-intro .ut-word span{color:#ed343b}
+.ut-intro .ut-word.second{color:#ed343b}
+.ut-intro .ut-word.second span{color:#ed343b}
+.ut-intro .ut-word.combined .combined-unboxed{color:#ffffff}
+.ut-intro .ut-word.combined .combined-thinking{color:#ed343b}
+.ut-intro .ut-word.combined{font-size:clamp(27px,7vw,100px);letter-spacing:-.06em}
+.ut-intro .ut-bottom{position:absolute;z-index:2;bottom:25px;left:25px;right:25px;display:flex;justify-content:space-between;gap:12px;color:#888;font:10px "DM Mono",monospace;letter-spacing:2px}
+body.ut-loading{overflow:hidden!important}
+@media(max-width:700px){.ut-intro .ut-kicker{letter-spacing:2px}.ut-intro .ut-bottom{left:15px;right:15px;bottom:15px;font-size:8px;letter-spacing:1px}.hero .ut-warp-layer{opacity:.6}}
+@media(prefers-reduced-motion:reduce){.ut-intro *{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Uniform page-wide treatment: every content section follows the dark brand system */
+main{background:#080808!important;color:#ffffff!important}
+main section:not(.hero):not(.page-hero){background:#0b0b0b!important;color:#ffffff!important}
+main section h1,main section h2,main section h3,main section h4{color:#ffffff}
+main section h1 span,main section h2 span,main section h3 span{color:#ed343b}
+main section p,main section li{color:#a5a5a5}
+main section a:not(.btn):not(.cta-button):not(.web-button):hover{color:#ed343b}
+.page-hero,.hero{background-color:#080808!important}
+
+
+
+/* =========================================================
+   SITE-WIDE SPACING REDUCTION — tighter, denser layouts
+   Applied across every page using this shared stylesheet.
+========================================================= */
+:root{--section-space:clamp(42px,5vw,72px)}
+main section:not(.hero):not(.page-hero):not(.hero-section){padding-top:var(--section-space)!important;padding-bottom:var(--section-space)!important}
+main section .section-head,
+main section .section-header,
+main section .section-heading,
+main section .work-header,
+main section .section-intro-wrap{margin-bottom:32px!important}
+main section .section-head{gap:32px!important}
+main section .section-head h2,
+main section .section-header h2,
+main section .section-heading h2{margin-bottom:0!important}
+main section .service-grid,
+main section .marketing-grid,
+main section .industry-grid,
+main section .project-grid,
+main section .work-grid,
+main section .web-grid,
+main section .cards-grid,
+main section .services-grid{gap:12px!important}
+main section .service-card,
+main section .marketing-card,
+main section .industry,
+main section .industry-card,
+main section .why-card{padding:clamp(17px,2vw,25px)!important}
+main section .service-card{min-height:0!important}
+main section .marketing-card{min-height:0!important}
+main section .section-intro{font-size:clamp(15px,1.2vw,18px)!important;line-height:1.6!important}
+main section p{line-height:1.6}
+main section .process-item{padding:25px 0!important}
+main section .web-card{min-height:340px!important;padding:28px!important}
+main section .industry{min-height:175px!important}
+main .cta,
+main section.cta,
+main section.final-cta{padding-top:clamp(55px,6vw,85px)!important;padding-bottom:clamp(55px,6vw,85px)!important}
+main .cta-inner{gap:36px!important}
+footer{padding-top:22px!important;padding-bottom:22px!important}
+.hero:not(.page-hero),.page-hero,.hero-section{min-height:min(82vh,760px)}
+.hero-content,.hero-inner,.page-hero .container{padding-top:120px!important;padding-bottom:65px!important}
+@media(max-width:900px){
+ :root{--section-space:38px}
+ main section:not(.hero):not(.page-hero):not(.hero-section){padding-top:var(--section-space)!important;padding-bottom:var(--section-space)!important}
+ main section .section-head,
+ main section .section-header,
+ main section .section-heading{gap:18px!important;margin-bottom:26px!important}
+ main section .service-grid,
+ main section .marketing-grid,
+ main section .industry-grid,
+ main section .project-grid,
+ main section .work-grid,
+ main section .web-grid,
+ main section .cards-grid,
+ main section .services-grid{gap:10px!important}
+ main section .service-card,
+ main section .marketing-card,
+ main section .industry,
+ main section .industry-card,
+ main section .why-card{padding:16px!important}
+ main section .web-card{min-height:290px!important;padding:22px!important}
+ main section .process-item{padding:20px 0!important}
+ .hero-content,.hero-inner,.page-hero .container{padding-top:105px!important;padding-bottom:45px!important}
+}
+@media(max-width:480px){
+ :root{--section-space:30px}
+ main section:not(.hero):not(.page-hero):not(.hero-section){padding-top:30px!important;padding-bottom:30px!important}
+ main section .section-head,
+ main section .section-header,
+ main section .section-heading{margin-bottom:20px!important}
+ main section .service-card,
+ main section .marketing-card,
+ main section .industry,
+ main section .industry-card,
+ main section .why-card{padding:13px!important}
+ main section .web-card{min-height:250px!important;padding:17px!important}
+ main section .process-item{padding:16px 0!important}
+ .hero-content,.hero-inner,.page-hero .container{padding-top:95px!important;padding-bottom:35px!important}
+ footer{padding-top:18px!important;padding-bottom:18px!important}
+}
+
+/* SITE-WIDE TEXT CONTRAST: make all muted/off-white copy pure bright white */
+body,
+body p,
+body li,
+body small,
+body label,
+body blockquote,
+body figcaption,
+body .muted,
+body .text-muted,
+body .hero-description,
+body .hero-text,
+body .intro-content,
+body .section-intro,
+body .service-card p,
+body .marketing-card p,
+body .web-card p,
+body .process-item p,
+body .feature-row p,
+body main section p,
+body main section li,
+body footer p,
+body footer li,
+body footer small,
+body .footer-bottom,
+body .footer-inner,
+body .footer-links {
+  color: #FFFFFF !important;
+}
