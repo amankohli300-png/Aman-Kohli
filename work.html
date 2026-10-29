@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<meta name="theme-color" content="#080b12">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Work — Unboxed Thinking</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GLOBAL CSS -->
+<link rel="stylesheet" href="global.css">
+
+
+<style>
+
+/* =====================================================
+   WORK PAGE ONLY
+   ===================================================== */
+
+:root{
+    --black:#080b12;
+    --dark:#0c121c;
+    --white:#fff;
+    --lavender:#e7e0f8;
+    --lavender2:#eee9fa;
+    --purple:#7c3aed;
+    --purple-dark:#6428c7;
+    --purple-light:#d8c9ff;
+    --lime:#c7ff29;
+    --text:#10131a;
+    --muted:#697386;
+    --line:rgba(15,18,28,.12);
+    --max:1460px;
+}
+
+.work-page{
+    font-family:"Manrope",sans-serif;
+    color:var(--text);
+    background:#fff;
+    overflow-x:hidden;
+}
+
+.work-page a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.work-container{
+    width:min(calc(100% - 90px),var(--max));
+    margin:auto;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 82% 25%,
+            rgba(124,58,237,.16),
+            transparent 29%
+        ),
+        linear-gradient(
+            135deg,
+            #fff 0%,
+            #faf9ff 55%,
+            var(--lavender) 100%
+        );
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:720px;
+    height:720px;
+    right:-330px;
+    top:5%;
+    border-radius:50%;
+    border:1px solid rgba(124,58,237,.17);
+    box-shadow:
+        0 0 0 90px rgba(124,58,237,.025),
+        0 0 0 180px rgba(124,58,237,.015);
+}
+
+.hero::after{
+    content:"WORK";
+    position:absolute;
+    right:-30px;
+    bottom:-60px;
+    font-size:clamp(150px,22vw,330px);
+    line-height:1;
+    font-weight:800;
+    letter-spacing:-.09em;
+    color:rgba(124,58,237,.035);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:160px 0 90px;
+}
+
+.eyebrow{
+    font-family:"DM Mono",monospace;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--purple);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    max-width:1050px;
+    font-size:clamp(58px,8vw,118px);
+    line-height:.88;
+    letter-spacing:-.078em;
+}
+
+.hero h1 span{
+    color:var(--purple);
+}
+
+.hero-text{
+    max-width:730px;
+    margin-top:38px;
+    color:#5e697b;
+    font-size:20px;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.section{
+    padding:125px 0;
+}
+
+.section-lavender{
+    background:var(--lavender);
+}
+
+.section-dark{
+    background:var(--dark);
+    color:#fff;
+}
+
+.section-head{
+    display:grid;
+    grid-template-columns:1fr 1.05fr;
+    gap:70px;
+    margin-bottom:70px;
+}
+
+.kicker{
+    font-family:"DM Mono",monospace;
+    font-size:12px;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+    color:var(--purple);
+    margin-bottom:20px;
+}
+
+.section-dark .kicker{
+    color:var(--lime);
+}
+
+.section h2{
+    font-size:clamp(45px,6vw,84px);
+    line-height:.93;
+    letter-spacing:-.068em;
+}
+
+.section-intro{
+    align-self:end;
+    max-width:680px;
+    color:#657084;
+    font-size:19px;
+    line-height:1.75;
+}
+
+.section-dark .section-intro{
+    color:#9ba5b5;
+}
+
+
+/* =====================================================
+   MARKETING PROJECTS
+===================================================== */
+
+.marketing{
+    background:#fff;
+}
+
+.marketing-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.marketing-card{
+    position:relative;
+    overflow:hidden;
+    min-height:570px;
+    padding:42px;
+    border-radius:32px;
+    background:#f5f2fa;
+    border:1px solid var(--line);
+    transition:.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.marketing-card:hover{
+    transform:translateY(-10px);
+    background:var(--purple);
+    color:#fff;
+    box-shadow:0 30px 70px rgba(80,45,150,.18);
+}
+
+.marketing-card::after{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    right:-100px;
+    bottom:-120px;
+    border-radius:50%;
+    border:1px solid rgba(124,58,237,.18);
+    transition:.5s;
+}
+
+.marketing-card:hover::after{
+    border-color:rgba(255,255,255,.25);
+    transform:scale(1.25);
+}
+
+.card-number{
+    font-family:"DM Mono",monospace;
+    color:var(--purple);
+    font-size:12px;
+    letter-spacing:.12em;
+}
+
+.marketing-card:hover .card-number{
+    color:var(--purple-light);
+}
+
+.marketing-card h3{
+    position:relative;
+    z-index:2;
+    margin-top:100px;
+    font-size:42px;
+    line-height:.98;
+    letter-spacing:-.06em;
+}
+
+.marketing-card p{
+    position:relative;
+    z-index:2;
+    max-width:590px;
+    margin-top:20px;
+    color:#687386;
+    font-size:17px;
+    line-height:1.7;
+}
+
+.marketing-card:hover p{
+    color:#fff;
+}
+
+.service-list{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:28px;
+}
+
+.service-list span{
+    padding:9px 13px;
+    border-radius:100px;
+    background:#fff;
+    color:#596273;
+    font-size:11px;
+    font-weight:700;
+}
+
+.marketing-card:hover .service-list span{
+    background:rgba(255,255,255,.15);
+    color:#fff;
+}
+
+
+/* =====================================================
+   WEB DEVELOPMENT
+===================================================== */
+
+.web-development{
+    background:var(--lavender);
+}
+
+.web-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.web-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:30px;
+    background:#fff;
+    border:1px solid rgba(20,20,30,.1);
+    transition:.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.web-card:hover{
+    transform:translateY(-9px);
+    box-shadow:0 28px 65px rgba(65,45,120,.17);
+}
+
+.web-visual{
+    height:330px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(124,58,237,.65),
+            rgba(124,58,237,.13) 30%,
+            transparent 63%
+        ),
+        #111721;
+}
+
+.web-visual::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border:1px solid rgba(255,255,255,.24);
+    border-radius:50%;
+    box-shadow:
+        0 0 0 45px rgba(255,255,255,.025),
+        0 0 0 90px rgba(255,255,255,.018);
+}
+
+.web-visual::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(8,11,18,.55),
+        transparent 60%
+    );
+}
+
+.visual-name{
+    position:absolute;
+    z-index:3;
+    left:30px;
+    bottom:27px;
+    color:#fff;
+    font-size:29px;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:-.055em;
+}
+
+.web-content{
+    padding:30px 32px 34px;
+}
+
+.web-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.web-type{
+    font-family:"DM Mono",monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--purple);
+}
+
+.web-number{
+    font-family:"DM Mono",monospace;
+    color:#9ca3ae;
+    font-size:11px;
+}
+
+.web-content h3{
+    font-size:35px;
+    line-height:1;
+    letter-spacing:-.06em;
+}
+
+.web-content p{
+    margin-top:15px;
+    color:#687386;
+    font-size:15px;
+    line-height:1.7;
+}
+
+.web-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:23px;
+    padding:12px 17px;
+    border-radius:100px;
+    background:var(--black);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.web-button:hover{
+    background:var(--purple);
+    transform:translateX(4px);
+}
+
+
+/* =====================================================
+   FEATURE CASE STUDIES
+===================================================== */
+
+.feature{
+    background:var(--dark);
+    color:#fff;
+}
+
+.feature-list{
+    border-top:1px solid rgba(255,255,255,.12);
+}
+
+.feature-row{
+    display:grid;
+    grid-template-columns:100px 1fr 1fr;
+    gap:40px;
+    align-items:center;
+    padding:42px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    transition:.4s;
+}
+
+.feature-row:hover{
+    padding-left:18px;
+}
+
+.feature-no{
+    font-family:"DM Mono",monospace;
+    color:var(--lime);
+    font-size:13px;
+}
+
+.feature-row h3{
+    font-size:36px;
+    letter-spacing:-.055em;
+}
+
+.feature-row p{
+    color:#9aa4b3;
+    font-size:15px;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.final-cta{
+    position:relative;
+    overflow:hidden;
+    padding:150px 0 165px;
+    background:
+        linear-gradient(
+            135deg,
+            #e7e0f8 0%,
+            #f0ecfa 52%,
+            #ddd2f4 100%
+        );
+}
+
+.final-cta::before{
+    content:"";
+    position:absolute;
+    width:650px;
+    height:650px;
+    right:-270px;
+    top:-170px;
+    border-radius:50%;
+    border:1px solid rgba(124,58,237,.2);
+    box-shadow:
+        0 0 0 70px rgba(124,58,237,.035),
+        0 0 0 140px rgba(124,58,237,.025),
+        0 0 0 210px rgba(124,58,237,.018);
+}
+
+.final-cta::after{
+    content:"LET'S";
+    position:absolute;
+    left:-25px;
+    bottom:-95px;
+    font-size:clamp(150px,21vw,310px);
+    line-height:1;
+    font-weight:800;
+    letter-spacing:-.1em;
+    color:rgba(124,58,237,.045);
+}
+
+.cta-content{
+    position:relative;
+    z-index:2;
+}
+
+.cta-label{
+    font-family:"DM Mono",monospace;
+    color:var(--purple);
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    margin-bottom:24px;
+}
+
+.cta-content h2{
+    max-width:1100px;
+    font-size:clamp(58px,8vw,120px);
+    line-height:.86;
+    letter-spacing:-.08em;
+}
+
+.cta-content h2 span{
+    color:var(--purple);
+}
+
+.cta-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:50px;
+    margin-top:55px;
+}
+
+.cta-bottom p{
+    max-width:620px;
+    color:#5e6879;
+    font-size:19px;
+    line-height:1.7;
+}
+
+.cta-button{
+    flex-shrink:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:17px 25px;
+    border-radius:100px;
+    background:var(--black);
+    color:#fff;
+    font-size:14px;
+    font-weight:800;
+    transition:.35s;
+}
+
+.cta-button:hover{
+    background:var(--purple);
+    transform:translateY(-5px);
+    box-shadow:0 18px 40px rgba(124,58,237,.2);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.work-footer{
+    background:var(--dark);
+    color:#fff;
+    padding:30px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    color:#929cab;
+    font-size:12px;
+}
+
+.footer-brand{
+    color:#fff;
+    font-size:16px;
+    font-weight:800;
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(45px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =====================================================
+   MOBILE WORK PAGE
+===================================================== */
+
+@media(max-width:900px){
+
+    .work-container{
+        width:min(calc(100% - 38px),var(--max));
+    }
+
+    .hero{
+        min-height:78vh;
+    }
+
+    .hero-content{
+        padding:130px 0 75px;
+    }
+
+    .hero h1{
+        font-size:clamp(53px,14vw,82px);
+    }
+
+    .hero-text{
+        font-size:17px;
+        margin-top:30px;
+    }
+
+    .section{
+        padding:90px 0;
+    }
+
+    .section-head{
+        grid-template-columns:1fr;
+        gap:28px;
+        margin-bottom:50px;
+    }
+
+    .section-intro{
+        font-size:17px;
+    }
+
+    .marketing-grid,
+    .web-grid{
+        grid-template-columns:1fr;
+    }
+
+    .marketing-card{
+        min-height:520px;
+        padding:32px;
+    }
+
+    .marketing-card h3{
+        margin-top:80px;
+        font-size:37px;
+    }
+
+    .web-visual{
+        height:270px;
+    }
+
+    .web-content{
+        padding:28px 24px 30px;
+    }
+
+    .web-content h3{
+        font-size:32px;
+    }
+
+    .feature-row{
+        grid-template-columns:50px 1fr;
+        gap:18px;
+        padding:32px 0;
+    }
+
+    .feature-row p{
+        grid-column:2;
+    }
+
+    .final-cta{
+        padding:105px 0 120px;
+    }
+
+    .cta-content h2{
+        font-size:clamp(56px,14vw,85px);
+    }
+
+    .cta-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:28px;
+    }
+
+    .cta-bottom p{
+        font-size:17px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:500px){
+
+    .marketing-card{
+        min-height:510px;
+    }
+
+    .marketing-card h3{
+        font-size:34px;
+    }
+
+    .service-list span{
+        font-size:10px;
+    }
+
+    .visual-name{
+        font-size:25px;
+        left:22px;
+    }
+
+    .web-content h3{
+        font-size:30px;
+    }
+
+    .final-cta::after{
+        font-size:125px;
+    }
+}
+
+</style>
+
+<link rel="stylesheet" href="unboxed-theme.css?v=20261017-bright-white-v1">
+  <link rel="stylesheet" href="unboxed-theme.css?v=20261017-bright-white-v1">
+<link rel="stylesheet" href="site-nav.css?v=20261017-bright-white-v1">
+
+<style id="headline-color-policy">
+/* Headline palette: red on light surfaces, white on dark surfaces. */
+:where(h1,h2,h3,h4,h5,h6),
+:where(h1,h2,h3,h4,h5,h6) :where(span,strong,em,b,i) {
+  color: #ed343b !important;
+}
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6),
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6)
+       :where(span,strong,em,b,i) {
+  color: #ffffff !important;
+}
+</style>
+
+</head>
+
+
+<body class="work-page">
+
+
+<!-- =====================================================
+     CENTRAL NAVBAR
+===================================================== -->
+
+<div id="navbar"></div>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="work-container hero-content reveal">
+
+<div class="eyebrow">
+SELECTED WORK
+</div>
+
+<h1>
+Digital work built around
+<span>real business goals.</span>
+</h1>
+
+<p class="hero-text">
+From websites and e-commerce experiences to paid
+campaigns, SEO and social media, our work is built
+around what the business actually needs.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MARKETING PROJECTS
+===================================================== -->
+
+<section class="section marketing">
+
+<div class="work-container">
+
+<div class="section-head reveal">
+
+<div>
+
+<div class="kicker">
+DIGITAL MARKETING
+</div>
+
+<h2>
+Marketing that has a reason behind it.
+</h2>
+
+</div>
+
+<p class="section-intro">
+Every business needs a different digital approach.
+These projects combine paid advertising, social media,
+SEO, local visibility and lead generation.
+</p>
+
+</div>
+
+
+<div class="marketing-grid">
+
+
+<article class="marketing-card reveal">
+
+<div class="card-number">
+LAIMAR
+</div>
+
+<h3>
+Laimar
+</h3>
+
+<p>
+Digital marketing support focused on banquet hiring,
+employee recruitment and strengthening the company's
+digital presence.
+</p>
+
+<div class="service-list">
+<span>Google Ads</span>
+<span>Meta Ads</span>
+<span>GMB</span>
+<span>Social Media</span>
+<span>SEO</span>
+<span>Website Optimisation</span>
+</div>
+
+</article>
+
+
+<article class="marketing-card reveal">
+
+<div class="card-number">
+HERITAGE HOLIDAY HOME
+</div>
+
+<h3>
+Heritage Holiday Home
+</h3>
+
+<p>
+Digital marketing and online visibility work focused on
+property promotion, product listing and generating
+relevant booking enquiries.
+</p>
+
+<div class="service-list">
+<span>Meta Ads</span>
+<span>Product Listing</span>
+<span>Booking.com</span>
+<span>Lead Generation</span>
+<span>Google Business Profile</span>
+</div>
+
+</article>
+
+
+<article class="marketing-card reveal">
+
+<div class="card-number">
+ANUP GUPTA STUDIO
+</div>
+
+<h3>
+Anup Gupta Studio
+</h3>
+
+<p>
+A combination of paid advertising, e-commerce development,
+product listing and social media management to build a
+stronger digital presence.
+</p>
+
+<div class="service-list">
+<span>Google Ads</span>
+<span>Meta Ads</span>
+<span>E-commerce</span>
+<span>Product Listing</span>
+<span>Social Media</span>
+</div>
+
+</article>
+
+
+<article class="marketing-card reveal">
+
+<div class="card-number">
+FORTUNE BTL
+</div>
+
+<h3>
+Fortune BTL Advertising
+</h3>
+
+<p>
+A complete digital presence project combining website
+development, optimisation, social media management and
+B2B lead generation through LinkedIn.
+</p>
+
+<div class="service-list">
+<span>Website Development</span>
+<span>SEO</span>
+<span>Social Media</span>
+<span>LinkedIn</span>
+<span>B2B Lead Generation</span>
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WEB DEVELOPMENT
+===================================================== -->
+
+<section class="section web-development">
+
+<div class="work-container">
+
+<div class="section-head reveal">
+
+<div>
+
+<div class="kicker">
+WEB DEVELOPMENT
+</div>
+
+<h2>
+Websites built for different businesses.
+</h2>
+
+</div>
+
+<p class="section-intro">
+Corporate websites, e-commerce experiences,
+recruitment platforms and business websites —
+each project is structured around its purpose.
+</p>
+
+</div>
+
+
+<div class="web-grid">
+
+
+<article class="web-card reveal">
+
+<div class="web-visual">
+
+<div class="visual-name">
+ANUP GUPTA<br>STUDIO
+</div>
+
+</div>
+
+<div class="web-content">
+
+<div class="web-meta">
+
+<span class="web-type">
+E-COMMERCE
+</span>
+
+<span class="web-number">
+01
+</span>
+
+</div>
+
+<h3>
+Anup Gupta Studio
+</h3>
+
+<p>
+Complete e-commerce website development with product
+listing and a structured online shopping experience.
+</p>
+
+<a
+href="https://anupguptastudio.com/"
+target="_blank"
+rel="noopener noreferrer"
+class="web-button">
+Visit Website ↗
+</a>
+
+</div>
+
+</article>
+
+
+<article class="web-card reveal">
+
+<div class="web-visual">
+
+<div class="visual-name">
+FORTUNE<br>BTL
+</div>
+
+</div>
+
+<div class="web-content">
+
+<div class="web-meta">
+
+<span class="web-type">
+CORPORATE
+</span>
+
+<span class="web-number">
+02
+</span>
+
+</div>
+
+<h3>
+Fortune BTL Advertising
+</h3>
+
+<p>
+Corporate website developed to present BTL, OOH,
+exhibitions, events and brand activation services.
+</p>
+
+<a
+href="https://fortuneadvertising.in/"
+target="_blank"
+rel="noopener noreferrer"
+class="web-button">
+Visit Website ↗
+</a>
+
+</div>
+
+</article>
+
+
+<article class="web-card reveal">
+
+<div class="web-visual">
+
+<div class="visual-name">
+TOP HUMAN<br>RESOURCE
+</div>
+
+</div>
+
+<div class="web-content">
+
+<div class="web-meta">
+
+<span class="web-type">
+RECRUITMENT / UAE
+</span>
+
+<span class="web-number">
+03
+</span>
+
+</div>
+
+<h3>
+Top Human Resource
+</h3>
+
+<p>
+Recruitment-focused business website for a UAE-based
+human resource and hiring company.
+</p>
+
+<a
+href="https://tophumanresource.com/"
+target="_blank"
+rel="noopener noreferrer"
+class="web-button">
+Visit Website ↗
+</a>
+
+</div>
+
+</article>
+
+
+<article class="web-card reveal">
+
+<div class="web-visual">
+
+<div class="visual-name">
+AVNOR<br>MEDIA
+</div>
+
+</div>
+
+<div class="web-content">
+
+<div class="web-meta">
+
+<span class="web-type">
+DIGITAL / UAE
+</span>
+
+<span class="web-number">
+04
+</span>
+
+</div>
+
+<h3>
+AVNOR Media
+</h3>
+
+<p>
+A professional digital presence designed around modern
+business communication and digital services.
+</p>
+
+<a
+href="https://avnor.media/"
+target="_blank"
+rel="noopener noreferrer"
+class="web-button">
+Visit Website ↗
+</a>
+
+</div>
+
+</article>
+
+
+<article class="web-card reveal">
+
+<div class="web-visual">
+
+<div class="visual-name">
+EXCEL IT<br>SOLUTION
+</div>
+
+</div>
+
+<div class="web-content">
+
+<div class="web-meta">
+
+<span class="web-type">
+TECHNOLOGY
+</span>
+
+<span class="web-number">
+05
+</span>
+
+</div>
+
+<h3>
+Excel IT Solution
+</h3>
+
+<p>
+Technology-focused business website presenting software,
+web development, mobile applications and IT solutions.
+</p>
+
+<a
+href="https://excelitsolution.com/"
+target="_blank"
+rel="noopener noreferrer"
+class="web-button">
+Visit Website ↗
+</a>
+
+</div>
+
+</article>
+
+
+<article class="web-card reveal">
+
+<div class="web-visual">
+
+<div class="visual-name">
+CPLX<br>MEDIA
+</div>
+
+</div>
+
+<div class="web-content">
+
+<div class="web-meta">
+
+<span class="web-type">
+DIGITAL / UAE
+</span>
+
+<span class="web-number">
+06
+</span>
+
+</div>
+
+<h3>
+CPLX Media
+</h3>
+
+<p>
+A modern digital business website focused on services,
+industries, case studies and brand presentation.
+</p>
+
+<a
+href="https://cplx.media/"
+target="_blank"
+rel="noopener noreferrer"
+class="web-button">
+Visit Website ↗
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED WORK
+===================================================== -->
+
+<section class="section feature">
+
+<div class="work-container">
+
+<div class="section-head reveal">
+
+<div>
+
+<div class="kicker">
+HOW WE WORK
+</div>
+
+<h2>
+Different problems. Different digital solutions.
+</h2>
+
+</div>
+
+<p class="section-intro">
+The work changes according to the business. The objective
+is always to create something useful, clear and aligned
+with the company's growth.
+</p>
+
+</div>
+
+
+<div class="feature-list">
+
+
+<div class="feature-row reveal">
+
+<div class="feature-no">
+01
+</div>
+
+<h3>
+Brand Presence
+</h3>
+
+<p>
+Building professional websites and digital profiles
+that communicate the company clearly and create trust.
+</p>
+
+</div>
+
+
+<div class="feature-row reveal">
+
+<div class="feature-no">
+02
+</div>
+
+<h3>
+Lead Generation
+</h3>
+
+<p>
+Using paid advertising, social media and digital
+channels to bring relevant enquiries to the business.
+</p>
+
+</div>
+
+
+<div class="feature-row reveal">
+
+<div class="feature-no">
+03
+</div>
+
+<h3>
+Digital Visibility
+</h3>
+
+<p>
+SEO, Google Business Profile, content and social media
+work that helps businesses become easier to discover.
+</p>
+
+</div>
+
+
+<div class="feature-row reveal">
+
+<div class="feature-no">
+04
+</div>
+
+<h3>
+Web Experience
+</h3>
+
+<p>
+Creating responsive websites that present services,
+products and business information professionally.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="final-cta">
+
+<div class="work-container">
+
+<div class="cta-content reveal">
+
+<div class="cta-label">
+LET'S BUILD
+</div>
+
+<h2>
+Ready to build
+<span>something better?</span>
+</h2>
+
+<div class="cta-bottom">
+
+<p>
+Have a website, marketing campaign or digital growth
+project in mind? Let's turn the requirement into
+something clear, professional and built for the business.
+</p>
+
+<a
+href="contact.html"
+class="cta-button">
+Let's Work Together
+<span>→</span>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="work-footer">
+
+<div class="work-container footer-inner">
+
+<div class="footer-brand">
+Unboxed Thinking
+</div>
+
+<div>
+Digital Marketing · Web Development · SEO · Paid Ads
+</div>
+
+<div>
+© 2026
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   LOAD CENTRAL NAVBAR
+===================================================== */
+fetch("navbar.html").then(function(response){if(!response.ok)throw new Error("Navbar could not be loaded.");return response.text();}).then(function(data){document.getElementById("navbar").innerHTML=data;}).catch(function(error){console.error("Navbar loading failed:",error);});
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const observer = new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach((entry,index)=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.transitionDelay =
+                Math.min(index,5) * 65 + "ms";
+
+            entry.target.classList.add("active");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.10
+}
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(el){
+
+    observer.observe(el);
+
+});
+
+
+/* =====================================================
+   MOBILE TOUCH FEEL
+===================================================== */
+
+document
+.querySelectorAll(
+    ".marketing-card,.web-card,.feature-row"
+)
+.forEach(function(card){
+
+    card.addEventListener(
+        "touchstart",
+        function(){
+
+            card.style.transform="translateY(-7px)";
+
+        },
+        {passive:true}
+    );
+
+
+    card.addEventListener(
+        "touchend",
+        function(){
+
+            card.style.transform="";
+
+        },
+        {passive:true}
+    );
+
+});
+
+</script>
+
+<script src="site-nav.js?v=20261017-hamburger-reset-v7"></script>
+<script src="unboxed-motion.js"></script>
+
+<!-- current-page-nav-fix -->
+<style id="current-page-nav-fix">
+.nav-links a.is-current-page:not(.nav-cta)::after{width:100%!important;background:#ed343b!important}
+.nav-links a.nav-cta.is-current-page{position:relative}
+.nav-links a.nav-cta.is-current-page::after{content:"";position:absolute;left:0;bottom:-7px;width:100%;height:2px;background:#ed343b}
+.mobile-links a.is-current-page:not(.mobile-cta){color:#ed343b!important;border-bottom-color:#ed343b!important;text-decoration:underline;text-decoration-color:#ed343b;text-decoration-thickness:2px;text-underline-offset:7px}
+.mobile-links a.mobile-cta.is-current-page{box-shadow:inset 0 -2px 0 #fff}
+
+
+/* =====================================================
+   ACCESSIBILITY / CONTRAST PASS — Unboxed Thinking
+   Keep text readable on both light and dark surfaces.
+===================================================== */
+:where(p, li, small, .hero-description, .hero-text, .section-intro,
+       .intro-content, .web-card p, .web-content p, .service-card p,
+       .process-item p, .cta-bottom p, .footer-inner, .feature-row p,
+       .contact-copy, .form-note, .card-description) {
+    color: #465164;
+}
+:where(.marketing, .process, .feature, .work-footer, footer.dark,
+       .dark-section, .mobile-menu) :where(p, li, small, .section-intro,
+       .intro-content, .footer-inner, .feature-row p, .process-head p,
+       .marketing-head p, .marketing-card p, .contact-copy, .form-note) {
+    color: #d0d6e0;
+}
+:where(.marketing, .process, .feature, .work-footer, footer.dark,
+       .dark-section) :where(a:not(.nav-cta):not(.cta-button), .footer-inner a) {
+    color: #f8fafc;
+}
+:where(.nav-links a, .mobile-links a, .logo, button, .cta-button,
+       .nav-cta, .web-button, .service-link, .service-arrow) {
+    text-decoration-thickness: max(1px, .06em);
+}
+:where(a, button, input, textarea, select):focus-visible {
+    outline: 3px solid #7c3aed;
+    outline-offset: 4px;
+}
+::selection {
+    color: #ffffff;
+    background: #6428c7;
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+</style>
+<script id="current-page-nav-fix-script">
+(function(){
+  function applyCurrentPage(){
+    var current=(window.location.pathname.split('/').pop()||'index.html').toLowerCase();
+    var aliases={'website-projects.html':'web-development.html','landing-page-projects.html':'web-development.html'};
+    var active=aliases[current]||current;
+    document.querySelectorAll('.nav-links a[href],.mobile-links a[href]').forEach(function(link){
+      try{
+        var target=(new URL(link.getAttribute('href'),window.location.href).pathname.split('/').pop()||'index.html').toLowerCase();
+        if(target===active){
+          link.classList.add('is-current-page');
+          link.setAttribute('aria-current','page');
+        }else{
+          link.classList.remove('is-current-page');
+          link.removeAttribute('aria-current');
+        }
+      }catch(e){}
+    });
+  }
+  applyCurrentPage();
+  if(document.body){
+    new MutationObserver(function(){applyCurrentPage();}).observe(document.body,{childList:true,subtree:true});
+  }
+})();
+</script>
+
+</body>
+</html>
