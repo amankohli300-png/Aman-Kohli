@@ -1,0 +1,274 @@
+/* =========================================================
+   AK × ST — GLOBAL CSS
+   Common spacing + responsive + page connection styling
+   Keeps intentional "breathing space"
+   Removes accidental / unusual spacing
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+/* Remove browser default spacing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote {
+    margin-top: 0;
+}
+
+/* Lists */
+ul,
+ol {
+    padding-left: 0;
+}
+
+/* Images */
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+img {
+    display: block;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+/* Buttons */
+button {
+    font: inherit;
+}
+
+/* =========================================================
+   REMOVE ACCIDENTAL OUTER SPACE
+   ========================================================= */
+
+main,
+header,
+footer,
+section,
+article,
+aside,
+nav {
+    max-width: 100%;
+}
+
+/* Prevent accidental horizontal gaps */
+section,
+header,
+footer,
+main {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Do NOT remove section padding:
+   section padding = intentional breathing space */
+
+
+/* =========================================================
+   COMMON CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(100% - 90px, 1460px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY — REMOVE ONLY UNUSUAL BOTTOM GAPS
+   ========================================================= */
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child,
+p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   COMMON PAGE SECTIONS
+   ========================================================= */
+
+.page-section {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav,
+header {
+    margin-top: 0;
+}
+
+.nav-inner {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   CARDS / BOXES
+   Prevent accidental external spacing
+   ========================================================= */
+
+.card,
+.box,
+.service-card,
+.project-card,
+.work-card,
+.industry-card,
+.contact-card {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.cta-button,
+.nav-cta,
+button {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PREVENT EMPTY ELEMENTS FROM CREATING SPACE
+   ========================================================= */
+
+p:empty,
+div:empty,
+span:empty,
+section:empty {
+    display: none;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE
+   Keep breathing space but remove accidental margins
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: calc(100% - 38px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section,
+    header,
+    footer,
+    main {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin-top: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+}
+
+
+/* =========================================================
+   SAFETY
+   Do not allow elements to create page-wide overflow
+   ========================================================= */
+
+* {
+    max-width: 100%;
+}
+
+html,
+body {
+    position: relative;
+}
