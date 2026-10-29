@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<meta name="theme-color" content="#080b12">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore website categories by AK × ST Advertising — business, e-commerce, real estate, portfolio and more. Open live projects or enquire about a new build.">
+<meta name="theme-color" content="#080808">
+<title>Website Collection — AK × ST Advertising</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="unboxed-theme.css?v=20261017-bright-white-v1">
+<link rel="stylesheet" href="site-nav.css?v=20261017-bright-white-v1">
+<style>
+:root{--collection-red:#ed343b;--collection-bg:#080808;--collection-panel:#111;--collection-muted:#a5a5a5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--collection-bg);color:#f5f5f5;font-family:Manrope,Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+img{display:block;max-width:100%}
+.container{width:min(calc(100% - 64px),1320px);margin-inline:auto}
+.collection-main{min-height:100vh;padding:128px 0 100px;background:#080808}
+.collection-topline{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:25px;font:11px "DM Mono",monospace;letter-spacing:.14em;text-transform:uppercase}
+.collection-kicker{color:var(--collection-red)}
+.collection-count{color:#999}
+.collection-heading{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);align-items:end;gap:38px;margin-bottom:32px}
+.collection-heading h1{max-width:780px;margin:0;color:#f5f5f5;font-size:clamp(42px,5.7vw,76px);font-weight:800;line-height:.98;letter-spacing:-.065em}
+.collection-heading p{max-width:460px;margin:0 0 5px;color:#a5a5a5;font-size:15px;line-height:1.75}
+.collection-search{display:flex;align-items:center;gap:13px;width:min(100%,610px);margin:0 0 30px;padding:0 17px;height:54px;border:1px solid rgba(255,255,255,.16);background:#111;border-radius:3px;transition:border-color .25s,box-shadow .25s}
+.collection-search:focus-within{border-color:var(--collection-red);box-shadow:0 0 0 3px rgba(237,52,59,.08)}
+.collection-search svg{width:17px;height:17px;flex:0 0 auto;color:#999}
+.collection-search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#f5f5f5;font-size:13px}
+.collection-search input::placeholder{color:#929292;opacity:1}
+.collection-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.collection-card{min-width:0;overflow:hidden;border:1px solid rgba(255,255,255,.13);background:#111;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+.collection-card:hover{transform:translateY(-5px);border-color:rgba(237,52,59,.7);box-shadow:0 18px 42px rgba(0,0,0,.28)}
+.collection-image{position:relative;overflow:hidden;height:150px;background:#191919}
+.collection-image img{width:100%;height:100%;object-fit:cover;opacity:.78;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .4s}
+.collection-card:hover .collection-image img{transform:scale(1.045);opacity:.95}
+.collection-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.65))}
+.collection-index{position:absolute;z-index:1;left:14px;top:13px;font:10px "DM Mono",monospace;letter-spacing:.12em;color:#fff}
+.collection-image-label{position:absolute;z-index:1;right:13px;bottom:12px;color:#fff;font:9px "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.collection-body{padding:17px 17px 16px}
+.collection-type{margin-bottom:9px;color:var(--collection-red);font:9px "DM Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+.collection-body h2{margin:0;color:#f5f5f5;font-size:19px;font-weight:750;line-height:1.12;letter-spacing:-.045em}
+.collection-body p{min-height:45px;margin:9px 0 14px;color:#a5a5a5;font-size:11px;line-height:1.65}
+.collection-action{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:9px 11px;background:var(--collection-red);color:#fff;font-size:10px;font-weight:800;letter-spacing:.01em;transition:background .25s,transform .25s;border:0;border-radius:2px;cursor:pointer}
+.collection-action:hover{background:#c9222a;transform:translateX(2px)}
+.collection-action.secondary{background:transparent;border:1px solid rgba(255,255,255,.2);color:#f5f5f5}
+.collection-action.secondary:hover{border-color:var(--collection-red);color:#fff;background:rgba(237,52,59,.1)}
+.collection-extra-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.collection-extra-links a{color:#aaa;font-size:9px;line-height:1.5;text-decoration:underline;text-decoration-color:rgba(255,255,255,.25);text-underline-offset:3px}
+.collection-extra-links a:hover{color:#fff;text-decoration-color:var(--collection-red)}
+.collection-note{display:flex;align-items:center;gap:10px;margin-top:24px;color:#888;font-size:11px;line-height:1.6}
+.collection-note:before{content:"";width:22px;height:1px;background:var(--collection-red);flex:0 0 auto}
+.collection-empty{display:none;grid-column:1/-1;padding:28px;border:1px solid rgba(255,255,255,.12);color:#aaa;font-size:13px}
+.scroll-progress{position:fixed;z-index:950;left:19px;top:94px;bottom:24px;width:2px;background:rgba(255,255,255,.14);pointer-events:none}
+.scroll-progress span{display:block;width:100%;height:0;background:var(--collection-red);box-shadow:0 0 10px rgba(237,52,59,.35)}
+.collection-footer{padding:22px 0;border-top:1px solid rgba(255,255,255,.12);background:#050505;color:#999}
+.collection-footer .container{display:flex;justify-content:space-between;gap:18px;font-size:11px}
+.collection-footer strong{color:#fff}
+.reveal{opacity:0;transform:translateY(-22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
+.reveal.active{opacity:1;transform:translateY(0)}
+body.modal-open{overflow:hidden}
+.inquiry-modal{position:fixed;z-index:20000;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px)}
+.inquiry-modal.open{display:flex}
+.inquiry-panel{position:relative;width:min(100%,500px);max-height:calc(100vh - 40px);overflow:auto;padding:28px;background:#111;border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.inquiry-kicker{color:var(--collection-red);font:10px "DM Mono",monospace;letter-spacing:.15em;text-transform:uppercase}
+.inquiry-panel h2{margin:12px 0 8px;font-size:30px;line-height:1;letter-spacing:-.05em;color:#fff}
+.inquiry-panel>p{margin:0 0 22px;color:#aaa;font-size:13px;line-height:1.65}
+.inquiry-close{position:absolute;right:15px;top:14px;width:34px;height:34px;border:1px solid #383838;background:#181818;color:#fff;cursor:pointer}
+.domain-options{display:grid;gap:9px;margin:0 0 15px}
+.domain-option{display:flex;align-items:center;gap:11px;padding:13px;border:1px solid rgba(255,255,255,.15);background:#171717;color:#eee;font-size:12px;cursor:pointer}
+.domain-option:has(input:checked){border-color:var(--collection-red);background:rgba(237,52,59,.07)}
+.domain-option input{accent-color:var(--collection-red)}
+.type-field{display:block;margin:0 0 17px}.type-field span{display:block;margin-bottom:7px;color:#aaa;font-size:11px}.type-field select{width:100%;height:44px;padding:0 12px;border:1px solid rgba(255,255,255,.18);background:#080808;color:#fff;outline:0;font-size:13px}.type-field select:focus{border-color:var(--collection-red)}
+.domain-field{display:block;margin:0 0 17px}
+.domain-field span{display:block;margin-bottom:7px;color:#aaa;font-size:11px}
+.domain-field input{width:100%;height:44px;padding:0 12px;border:1px solid rgba(255,255,255,.18);background:#080808;color:#fff;outline:0;font-size:13px}
+.domain-field input:focus{border-color:var(--collection-red)}
+.whatsapp-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:46px;border:0;background:var(--collection-red);color:#fff;font-weight:800;font-size:12px;cursor:pointer}
+.whatsapp-submit:hover{background:#c9222a}
+.modal-footnote{margin-top:12px!important;margin-bottom:0!important;font-size:10px!important;color:#777!important}
+@media(max-width:1100px){.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.collection-heading{grid-template-columns:1fr;gap:18px}.collection-heading p{max-width:650px}.collection-image{height:175px}}
+@media(max-width:620px){.container{width:calc(100% - 34px)}.collection-main{padding:112px 0 68px}.collection-topline{font-size:9px;margin-bottom:20px}.collection-heading h1{font-size:clamp(38px,10vw,56px)}.collection-heading p{font-size:13px}.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.collection-image{height:118px}.collection-body{padding:12px 11px}.collection-body h2{font-size:15px}.collection-body p{font-size:10px;min-height:52px;margin:7px 0 10px}.collection-action{font-size:9px;padding:8px 9px}.collection-extra-links{gap:5px}.collection-extra-links a{font-size:8px}.collection-search{height:49px;margin-bottom:22px}.scroll-progress{left:7px;top:84px;bottom:16px}.collection-footer .container{flex-direction:column}.inquiry-panel{padding:23px 18px}}
+@media(max-width:370px){.collection-grid{grid-template-columns:1fr}.collection-image{height:155px}.collection-body p{min-height:0}.collection-body h2{font-size:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.collection-card,.collection-image img{transition:none!important;transform:none!important}*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+
+<style id="headline-color-policy">
+/* Headline palette: red on light surfaces, white on dark surfaces. */
+:where(h1,h2,h3,h4,h5,h6),
+:where(h1,h2,h3,h4,h5,h6) :where(span,strong,em,b,i) {
+  color: #ed343b !important;
+}
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6),
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6)
+       :where(span,strong,em,b,i) {
+  color: #ffffff !important;
+}
+</style>
+
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">UNBOXED <span>THINKING.</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="web-development.html">Web Development</a><a href="contact.html" class="nav-cta">Let's Talk</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-label">Unboxed Thinking / MENU</div>
+    <nav class="mobile-links" aria-label="Mobile navigation">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="web-development.html">Web Development</a><a href="contact.html" class="mobile-cta">Let's Talk →</a>
+    </nav>
+  </div>
+</div>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressFill"></span></div>
+<main class="collection-main">
+  <div class="container">
+    <div class="collection-topline reveal"><span class="collection-kicker">WEBSITE COLLECTION</span><span class="collection-count">08 CATEGORIES</span></div>
+    <div class="collection-heading reveal">
+      <h1>Every business needs a different kind of website.</h1>
+      <p>Choose the website type that fits your business, then send a quick enquiry. We’ll help you plan the right website for your needs.</p>
+    </div>
+    <label class="collection-search reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="categorySearch" type="search" aria-label="Search website categories" placeholder="Looking for a website that fits your business?" autocomplete="off">
+    </label>
+    <div class="collection-grid" id="collectionGrid">
+      <article class="collection-card reveal" data-search="corporate business company professional services fortune advertising">
+        <div class="collection-image"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Modern corporate office building" loading="lazy"><span class="collection-index">CORPORATE</span><span class="collection-image-label">Business presence</span></div>
+        <div class="collection-body"><div class="collection-type">Business / Corporate</div><h2>Business Websites</h2><p>Professional websites that present your company, services and credibility clearly.</p><button class="collection-action" type="button" data-enquire="Business Websites">Enquire about this ↗</button></div>
+      </article>
+      <article class="collection-card reveal" data-search="ecommerce commerce online store shop product shopping anup gupta studio">
+        <div class="collection-image"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=85" alt="Online shopping and e-commerce payment" loading="lazy"><span class="collection-index">COMMERCE</span><span class="collection-image-label">Products to customers</span></div>
+        <div class="collection-body"><div class="collection-type">E-commerce</div><h2>E-commerce</h2><p>Online stores with organised products, clear categories and a smoother shopping journey.</p><button class="collection-action" type="button" data-enquire="E-commerce">Enquire about this ↗</button></div>
+      </article>
+      <article class="collection-card reveal" data-search="property real estate builder homes apartments property listing">
+        <div class="collection-image"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Premium residential property interior" loading="lazy"><span class="collection-index">PROPERTY</span><span class="collection-image-label">Property experiences</span></div>
+        <div class="collection-body"><div class="collection-type">Property</div><h2>Real Estate Websites</h2><p>Property showcases, project pages and enquiry journeys for builders and agents.</p><button class="collection-action" type="button" data-enquire="Real Estate Websites">Enquire about this ↗</button></div>
+      </article>
+      <article class="collection-card reveal" data-search="creative portfolio agency personal brand studio avnor cplx">
+        <div class="collection-image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85" alt="Digital creative workspace and analytics screen" loading="lazy"><span class="collection-index">CREATIVE</span><span class="collection-image-label">Brand and portfolio</span></div>
+        <div class="collection-body"><div class="collection-type">Creative</div><h2>Portfolio & Agency</h2><p>Distinctive digital homes for agencies, creators and personal brands.</p><button class="collection-action" type="button" data-enquire="Portfolio & Agency">Enquire about this ↗</button></div>
+      </article>
+      <article class="collection-card reveal" data-search="hospitality hotel restaurant resort cafe booking">
+        <div class="collection-image"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85" alt="Restaurant hospitality interior" loading="lazy"><span class="collection-index">HOSPITALITY</span><span class="collection-image-label">Guest experience</span></div>
+        <div class="collection-body"><div class="collection-type">Hospitality</div><h2>Hospitality Websites</h2><p>Restaurant, hotel and resort websites built around menus, bookings and guest enquiries.</p><button class="collection-action" type="button" data-enquire="Hospitality Websites">Enquire about this ↗</button></div>
+      </article>
+      <article class="collection-card reveal" data-search="saas software web application platform dashboard online tool">
+        <div class="collection-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85" alt="Software dashboard and analytics interface" loading="lazy"><span class="collection-index">SAAS</span><span class="collection-image-label">Digital products</span></div>
+        <div class="collection-body"><div class="collection-type">Software / Platform</div><h2>SaaS & Web Apps</h2><p>Web-based tools, platforms and dashboards shaped around real user workflows.</p><button class="collection-action" type="button" data-enquire="SaaS & Web Apps">Enquire about this ↗</button></div>
+      </article>
+      <article class="collection-card reveal" data-search="education coaching school institute learning courses training">
+        <div class="collection-image"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=85" alt="Students walking across a university campus" loading="lazy"><span class="collection-index">EDUCATION</span><span class="collection-image-label">Learning online</span></div>
+        <div class="collection-body"><div class="collection-type">Education</div><h2>Education & Coaching</h2><p>Course, institute and coaching websites that make programmes easy to explore.</p><button class="collection-action" type="button" data-enquire="Education & Coaching">Enquire about this ↗</button></div>
+      </article>
+      <article class="collection-card reveal" data-search="healthcare clinic hospital doctor medical service consultant">
+        <div class="collection-image"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85" alt="Healthcare professional working in a clinical environment" loading="lazy"><span class="collection-index">HEALTHCARE</span><span class="collection-image-label">Trust and service</span></div>
+        <div class="collection-body"><div class="collection-type">Healthcare / Services</div><h2>Healthcare & Service</h2><p>Trust-building websites for clinics, consultants and professional service providers.</p><button class="collection-action" type="button" data-enquire="Healthcare & Service">Enquire about this ↗</button></div>
+      </article>
+      <div class="collection-empty" id="emptyState">No matching categories. Try another search, or contact us about a custom website.</div>
+    </div>
+    <div class="collection-note reveal">Choose a website type on any card to open the enquiry form, or select a custom website if you’re not sure.</div>
+  </div>
+</main>
+<footer class="collection-footer"><div class="container"><strong>UNBOXED THINKING.</strong><span>Web Development · Digital Marketing · SEO · Paid Ads</span><span>© 2026</span></div></footer>
+<div class="inquiry-modal" id="inquiryModal" role="dialog" aria-modal="true" aria-labelledby="inquiryTitle" aria-hidden="true">
+  <form class="inquiry-panel" id="inquiryForm">
+    <button class="inquiry-close" type="button" id="closeInquiry" aria-label="Close enquiry">✕</button>
+    <div class="inquiry-kicker">Project enquiry / Website</div>
+    <h2 id="inquiryTitle">Let's talk about your website.</h2>
+    <p id="inquiryDescription">Tell us whether you already have a domain. We'll prepare your enquiry on WhatsApp.</p>
+    <label class="type-field" for="websiteType"><span>Which website do you need?</span><select id="websiteType" name="websiteType" required><option value="Business Websites" selected>Business Websites</option><option value="E-commerce">E-commerce</option><option value="Real Estate Websites">Real Estate Websites</option><option value="Portfolio & Agency">Portfolio & Agency</option><option value="Hospitality Websites">Hospitality Websites</option><option value="SaaS & Web Apps">SaaS & Web Apps</option><option value="Education & Coaching">Education & Coaching</option><option value="Healthcare & Service">Healthcare & Service</option><option value="Custom Website / Not Sure">Custom Website / Not Sure</option></select></label>
+    <div class="domain-options">
+      <label class="domain-option"><input type="radio" name="domainChoice" value="have" checked> I already have a domain</label>
+      <label class="domain-option"><input type="radio" name="domainChoice" value="need"> I need a new domain</label>
+    </div>
+    <label class="domain-field" id="domainField"><span>Your domain name</span><input id="domainInput" type="text" placeholder="e.g. yourbrand.com" autocomplete="url" required></label>
+    <button class="whatsapp-submit" type="submit">Continue on WhatsApp <span>↗</span></button>
+    <p class="modal-footnote">WhatsApp opens with a pre-filled message. You send it yourself.</p>
+  </form>
+</div>
+<script src="site-nav.js?v=20261017-hamburger-reset-v7"></script>
+<script>
+(function(){
+  const modal=document.getElementById('inquiryModal');
+  const form=document.getElementById('inquiryForm');
+  const domainInput=document.getElementById('domainInput');
+  const domainField=document.getElementById('domainField');
+  const websiteType=document.getElementById('websiteType');
+  let selectedCategory='Website';
+  const closeButton=document.getElementById('closeInquiry');
+  function openModal(category){
+    selectedCategory=category;
+    websiteType.value=category;
+    if(!websiteType.value){websiteType.value=websiteType.options[0].value;selectedCategory=websiteType.value;}
+    document.getElementById('inquiryTitle').textContent='Let’s build your '+category.toLowerCase()+'.';
+    document.getElementById('inquiryDescription').textContent='Tell us whether you already have a domain. We’ll prepare your enquiry on WhatsApp.';
+    modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');
+    syncDomainChoice();closeButton.focus();
+  }
+  function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');}
+  function syncDomainChoice(){
+    const choice=form.querySelector('input[name="domainChoice"]:checked').value;
+    const hasDomain=choice==='have';
+    domainField.style.display=hasDomain?'block':'none';
+    domainInput.required=hasDomain;
+    if(!hasDomain)domainInput.value='';
+  }
+  document.querySelectorAll('[data-enquire]').forEach(button=>button.addEventListener('click',()=>openModal(button.dataset.enquire)));
+  websiteType.addEventListener('change',()=>{selectedCategory=websiteType.value;});
+  form.querySelectorAll('input[name="domainChoice"]').forEach(input=>input.addEventListener('change',syncDomainChoice));
+  closeButton.addEventListener('click',closeModal);
+  modal.addEventListener('click',event=>{if(event.target===modal)closeModal();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeModal();});
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    const choice=form.querySelector('input[name="domainChoice"]:checked').value;
+    selectedCategory=websiteType.value;
+    const domain=choice==='have'?domainInput.value.trim():'Not purchased yet — need domain suggestions';
+    const message='Hi AK × ST Advertising,\n\nI’m interested in a website.\n\nWebsite type: '+selectedCategory+'\nDomain requirement: '+(choice==='have'?'I already have a domain':'I need a new domain')+'\nDomain: '+domain+'\n\nPlease share the pricing, process and timeline.';
+    window.open('https://wa.me/919112573020?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+  });
+  const search=document.getElementById('categorySearch');
+  const cards=[...document.querySelectorAll('.collection-card')];
+  const empty=document.getElementById('emptyState');
+  const prompts=['Looking for a website that fits your business?','Need a website that converts?','Building your brand’s next digital experience?'];
+  let promptIndex=0;
+  search.addEventListener('input',()=>{
+    const term=search.value.trim().toLowerCase();let visible=0;
+    cards.forEach(card=>{const match=card.dataset.search.includes(term);card.style.display=match?'':'none';if(match)visible++;});
+    empty.style.display=visible?'none':'block';
+  });
+  setInterval(()=>{if(document.activeElement!==search&&!search.value){promptIndex=(promptIndex+1)%prompts.length;search.placeholder=prompts[promptIndex];}},2700);
+  const fill=document.getElementById('scrollProgressFill');
+  function updateProgress(){const max=document.documentElement.scrollHeight-window.innerHeight;fill.style.height=(max>0?Math.min(100,window.scrollY/max*100):0)+'%';}
+  window.addEventListener('scroll',updateProgress,{passive:true});window.addEventListener('resize',updateProgress);updateProgress();
+  const reveals=[...document.querySelectorAll('.reveal')];
+  if('IntersectionObserver'in window){
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){const index=reveals.indexOf(entry.target);entry.target.style.transitionDelay=Math.min(index%4,3)*75+'ms';entry.target.classList.add('active');observer.unobserve(entry.target);}}),{threshold:.08});
+    reveals.forEach(el=>observer.observe(el));
+  }else reveals.forEach(el=>el.classList.add('active'));
+  syncDomainChoice();
+})();
+</script>
+
+<!-- current-page-nav-fix -->
+<style id="current-page-nav-fix">
+.nav-links a.is-current-page:not(.nav-cta)::after{width:100%!important;background:#ed343b!important}
+.nav-links a.nav-cta.is-current-page{position:relative}
+.nav-links a.nav-cta.is-current-page::after{content:"";position:absolute;left:0;bottom:-7px;width:100%;height:2px;background:#ed343b}
+.mobile-links a.is-current-page:not(.mobile-cta){color:#ed343b!important;border-bottom-color:#ed343b!important;text-decoration:underline;text-decoration-color:#ed343b;text-decoration-thickness:2px;text-underline-offset:7px}
+.mobile-links a.mobile-cta.is-current-page{box-shadow:inset 0 -2px 0 #fff}
+</style>
+<script id="current-page-nav-fix-script">
+(function(){
+  function applyCurrentPage(){
+    var current=(window.location.pathname.split('/').pop()||'index.html').toLowerCase();
+    var aliases={'website-projects.html':'web-development.html','landing-page-projects.html':'web-development.html'};
+    var active=aliases[current]||current;
+    document.querySelectorAll('.nav-links a[href],.mobile-links a[href]').forEach(function(link){
+      try{
+        var target=(new URL(link.getAttribute('href'),window.location.href).pathname.split('/').pop()||'index.html').toLowerCase();
+        if(target===active){
+          link.classList.add('is-current-page');
+          link.setAttribute('aria-current','page');
+        }else{
+          link.classList.remove('is-current-page');
+          link.removeAttribute('aria-current');
+        }
+      }catch(e){}
+    });
+  }
+  applyCurrentPage();
+  if(document.body){
+    new MutationObserver(function(){applyCurrentPage();}).observe(document.body,{childList:true,subtree:true});
+  }
+})();
+</script>
+
+<script src="unboxed-motion.js"></script>
+
+</body>
+</html>
